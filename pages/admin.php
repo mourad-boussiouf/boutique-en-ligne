@@ -17,7 +17,7 @@
 </head>
 <body>
 <header>
-
+<a href="index">Home</a>
 </header>
 
 <h1>Bienvenue sur La page Administration</h1>
@@ -39,7 +39,7 @@
             <ul>
                 <li><a href="<?=path?>admin/stock">Gestion des Stock</a></li>
                 <li><a href="<?=path?>admin/user">Gestion des Utilisateurs</a></li>
-                <li><a href="<?=path?>admin/article">Ajout d'article</a></li>
+                <li><a href="<?=path?>adminproducts.php">Ajout d'article</a></li>
                 <li><a href="<?=path?>admin/vente">Visualisation des ventes</a></li>
                 <li><a href="<?=path?>admin/categorie">Gestion des catégories</a></li>
                 <li><a href="<?=path?>accueil">Retour à l'accueil</a></li>

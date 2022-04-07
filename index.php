@@ -1,5 +1,7 @@
 <?php
 
+// pk il marche l'autoloader le frerrre
+
 session_start();
 spl_autoload_register(function ($class) {
     if (file_exists('handling/' . $class . '.php')) {
@@ -18,12 +20,17 @@ spl_autoload_register(function ($class) {
 
 );
 
+// constate du path pour utiliser path partout
+
+define('path', '/boutique-en-ligne/');
+define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
+$params = explode('/', $_GET['p']);
 ?>
 
 
 
 
-
+<a href="admin">Admin la mine</a> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,20 +41,16 @@ spl_autoload_register(function ($class) {
 </head>
 
 <body>
-<header><form action="post"><input type="text" id="name" name="name" required
+<header>
+ 
+
+
+
+
+<form action="post"><input type="text" id="name" name="name" required
        minlength="4" maxlength="8" placeholder ="se connecter" size="10"> </form></header>
 
-
-
-
     <h1> Bienvenue <h1>
-
-
-
-
-
-
-
 
 </form>
 </body>
