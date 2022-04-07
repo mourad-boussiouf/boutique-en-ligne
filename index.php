@@ -1,3 +1,29 @@
+<?php
+
+session_start();
+spl_autoload_register(function ($class) {
+    if (file_exists('handling/' . $class . '.php')) {
+        require_once('handling/' . $class . '.php');
+
+    }
+    if (file_exists('handling/' . $class . 'Class.php')) {
+        require_once('handling/' . $class . 'Class.php');
+    }
+    if (file_exists('handling/' . $class . '.php')) {
+        require_once('handling/' . $class . '.php');
+    }
+
+}
+
+
+);
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
