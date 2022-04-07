@@ -1,10 +1,10 @@
 <?php
 
-class Databaseconnect
+class DBClass
 {
     //identifiants du mysql
     private $host = "localhost";
-    private $db_name = "boutique";
+    private $db_name = "boutique-en-ligne";
     private $login = "root";
     private $password = "";
 
