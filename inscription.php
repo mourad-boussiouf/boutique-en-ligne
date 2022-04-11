@@ -38,27 +38,27 @@ $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
         public $password;
 
             //FUNCTION REGISTER
-public function register($login, $password, $email, $firstname, $lastname){
+public function register($email, $password, $firstname, $lastname){
     
     $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
-    $requetelogin= $bdd->prepare("SELECT * FROM user WHERE login = ?");
-    $requetelogin->execute(array($login));
-    $loginexist= $requetelogin->rowCount();
+    $requeteemail= $bdd->prepare("SELECT * FROM user WHERE login = ?");
+    $requeteemail->execute(array($email));
+    $emailexist= $requeteemail->rowCount();
 
-    if($loginexist == 0) {
-        $insert= $bdd->prepare("INSERT INTO user (login, password, email, firstname, lastname) VALUES(?, ?, ?, ?, ?)");
-        $insert->execute(array($login, $password, $email, $firstname, $lastname));
-        return [$login, $password, $email, $firstname, $lastname];
+    if($emailexist == 0) {
+        $insert= $bdd->prepare("INSERT INTO user ( firstname, lastname, password, email, telephone) VALUES(?, ?, ?, ?, ?)");
+        $insert->execute(array($firstname, $lastname, $password, $email));
+        return [$firstname, $lastname, $password, $email];
     }
 
 }
 
 //FUNCTION CONNECT
-public function connect($login, $password){
+public function connect($email, $password){
    
     $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
-    $requser = $bdd->prepare("SELECT * FROM user WHERE login = ? AND password = ?");
-    $requser->execute(array($login, $password));
+    $requser = $bdd->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+    $requser->execute(array($email, $password));
     $userexist = $requser->rowCount();
 
     if($userexist == 1){
@@ -66,11 +66,8 @@ public function connect($login, $password){
         $user= $requser->fetch();
 
               $this->id = $user['id'];
-              $this->login = $user['login'];
-              $this->password = $user['password'];
               $this->email = $user['email'];
-              $this->firstname = $user['firstname'];
-              $this->lastname = $user['lastname'];
+              $this->password = $user['password'];
               return true;
             }
             
@@ -87,7 +84,14 @@ public function connect($login, $password){
         if(isset($_POST['email']) && isset($_POST['password'])){
             $statement = $bdd->prepare('SELECT password FROM user WHERE email=?');
             $statement->execute($_POST['email']);
-            $password = $statement->fetchColumn();
+            $hashedPassword = $statement->fetchColumn();
+
+            //VERIF MDP
+            if(password_verify($_POST['password'], $hashedPassword)){
+                echo 'Connexion réussie';
+            } else {
+                echo 'Connexion échoué';
+            }
         }
   
     }

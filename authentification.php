@@ -16,7 +16,7 @@
             <h2>CONNECTEZ-VOUS</h2>
             <input type="text" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Mot de passe">
-            <span class="psw"><a href="#">Mot de passe oublié</a></span>
+            <span class="psw"><a href="forgotpass.php">Mot de passe oublié</a></span>
             <input class="button" type="submit" name="submit" value="SE CONNECTER">
         </form>
         <!--FORMULAIRE INSCRIPTION-->
@@ -25,9 +25,8 @@
             <h2>INSCRIVEZ-VOUS ?</h2>
             <input type="text" name="firstname" placeholder="Prénom">
             <input type="text" name="lastname" placeholder="Nom">
-            <input type="text" name="mail" placeholder="Mail">
+            <input type="text" name="email" placeholder="Email">
             <input type="text" name="phone" placeholder="Numéro de téléphone">
-            <input type="text" name="login" placeholder="Pseudo">
             <input type="password" name="password" placeholder="Mot de passe">
             <input type="password" name="conf-pass" placeholder="Confirmation de mot de passe">
             <input class="button" type="submit" name="submit" value="S'INSCRIRE">
