@@ -39,7 +39,7 @@ class Inscription extends Controller
                 }
                 else {
                     $hash = password_hash($password, PASSWORD_DEFAULT);
-                    $user = new Utilisateursmodel();
+                    $user = new UserModel();
                     $user->insert($email, $hash, $telephone, $adress, $nom, $prenom);
                     array_push($success, 'Vous êtes bien inscrit');
                     self::render("inscription", compact('success'));
@@ -49,19 +49,16 @@ class Inscription extends Controller
             } else {
                 echo "Certains champs sont vides";
             }
+            
         }
+        self::render("inscription",compact('success'));
+    }
+    public static function index()
+    {
+        self::render('inscription');
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
+
+?>
