@@ -1,5 +1,5 @@
 <?php
-class RankClass extends DBClass{
+class RankClass extends Model{
     public function __construct()
     {
         $this->table="droits_user";

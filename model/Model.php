@@ -1,17 +1,17 @@
 <?php
 
-class DBClass
+class Model
 {
-    //identifiants du mysql
+    //co bdd
     private $host = "localhost";
     private $db_name = "boutique-en-ligne";
     private $login = "root";
     private $password = "";
 
-    //propriété de la connexion
+    //type de connexion
     protected $_connexion = null;
 
-    //proprieté des requetes
+    //forme des requete
 
     public $table;
     public $id;
@@ -29,6 +29,8 @@ class DBClass
         return $this->_connexion;
     }
 
+        //FONCTIONS GENERALES .
+        
     public function getALL()
     {
         $sth = $this->_connexion->prepare('SELECT * FROM ' . $this->table);
@@ -53,15 +55,15 @@ class DBClass
 
     }
 
-    public function update($params, $value, $id)
+    public function update($pageask, $value, $id)
     {
-        $sth = $this->_connexion->prepare("UPDATE $this->table SET $params=? WHERE id=$id ");
+        $sth = $this->_connexion->prepare("UPDATE $this->table SET $pageask=? WHERE id=$id ");
         $sth->execute(array($value));
     }
 
-    public function deleteId($params,$id)
+    public function deleteId($pageask,$id)
     {
-        $sth=$this->_connexion->prepare('DELETE FROM'.$this->table.' WHERE'. $params.'='.$id);
+        $sth=$this->_connexion->prepare('DELETE FROM'.$this->table.' WHERE'. $pageask.'='.$id);
         $sth->execute();
 
     }

@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-<p> <img src=<?php echo  ?> alt="Italian Trulli">  </p>
-</body>
-
-
-</html>
-
 <?php
 
 session_start();
@@ -40,34 +24,19 @@ define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 $pageask = explode('/', $_GET['p']);
 
 
-if ($pageask[0] == 'admin') {
-    if (isset($pageask[1])) {
-        if ($pageask[1] == 'stock') {
-            if (isset($pageask[2])) {
-                Admin::adStock($pageask[2]);
-            }
-            Admin::Stock();
-        } elseif ($pageask[1] == 'user') {
-            if (isset($pageask[2])) {
-                Admin::manageuser($pageask[2]);
-
-            }
-            Admin::user();
-        } elseif ($pageask[1] == 'article') {
-            Admin::articles();
-        } elseif ($pageask[1] == 'vente') {
-            Admin::ventes();
-        } elseif ($pageask[1] == 'categorie') {
-            Admin::categories();
-        } else {
-            Admin::index();
-        }
-
-
-    } else {
-        Admin::index();
-    }
+ if ($pageask[0] == 'connexion') {
+    Connexion::index();
+} elseif ($pageask[0] == 'inscription') {
+    Inscription::Register();
+} else {
+    Accueil::index();
 }
 
 
 ?>
+
+
+
+
+
+
