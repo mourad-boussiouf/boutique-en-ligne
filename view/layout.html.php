@@ -37,6 +37,7 @@ $pageask = explode('/', $_GET['p']);
                 <li><a href="#">T-shirt</a></li>
                 <li><a href="#">A propos</a></li>
                 <li><a href="<?= path ?>connexion">Connexion</a></li>
+                <li><a href="<?= path ?>authentification">Identifiezz vous</a></li>
                 <button><li><a href="<?= path ?>inscription">Inscription</a> </li></button>
             </ul>
             <input type="search" placeholder="Rechercher">

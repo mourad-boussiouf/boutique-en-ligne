@@ -25,4 +25,14 @@ class Controller
         require_once(ROOT . 'view/layout.html.php');
     }
 
+    public static function disconnect($id)
+    {
+        unset($_SESSION['id']);
+        unset($_SESSION['login']);
+        header('Refresh:0;url=' . path . 'accueil');
+    }
+
+
+
+
 }

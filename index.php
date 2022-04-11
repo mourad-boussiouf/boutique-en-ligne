@@ -28,9 +28,13 @@ $pageask = explode('/', $_GET['p']);
 
  if ($pageask[0] == 'connexion') {
     Connexion::index();
-} elseif ($pageask[0] == 'inscription') {
+}elseif ($pageask[0] == 'inscription') {
     Inscription::Register();
-} else {
+}elseif ($pageask[0] == 'authentification'){
+    Authentification::index();
+}elseif ($pageask[0] == 'deco') {
+    Controller::disconnect($_SESSION['id']);
+}else{
     Accueil::index();
 }
 

@@ -7,7 +7,7 @@
 <?php else: ?>
     
 <main>
-    <h1 class="titre">Inscription</h1>
+    <h1 class="titre">Connexion</h1>
     <form class="box" action="#" method="post">
     <label for="email">Email</label>
             <input type="text" name="email">
