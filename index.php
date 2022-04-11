@@ -17,10 +17,12 @@ spl_autoload_register(function ($class) {
 );
 
 //path = racine du dossier
-define('path', '/boutique-en-ligne/');
-//root = remplace l'url par le nom du fichier
-define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
+//str replace (search, replace, subject)
 //root = le nom du fichier demandé devient la variable pageask
+define('path', '/boutique-en-ligne/');
+
+define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
+
 $pageask = explode('/', $_GET['p']);
 
 
