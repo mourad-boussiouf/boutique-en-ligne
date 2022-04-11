@@ -14,7 +14,7 @@
     <form class="box-conn" action="" method="post">
             <h4>Vous avez un compte ?</h4>
             <h2>CONNECTEZ-VOUS</h2>
-            <input type="text" name="login" placeholder="Nom d'utilisateur">
+            <input type="text" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Mot de passe">
             <span class="psw"><a href="#">Mot de passe oublié</a></span>
             <input class="button" type="submit" name="submit" value="SE CONNECTER">

@@ -37,7 +37,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
         public $lastname;
         public $password;
 
-            //REGISTER
+            //FUNCTION REGISTER
 public function register($login, $password, $email, $firstname, $lastname){
     
     $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
@@ -53,7 +53,7 @@ public function register($login, $password, $email, $firstname, $lastname){
 
 }
 
-//CONNECT
+//FUNCTION CONNECT
 public function connect($login, $password){
    
     $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
@@ -78,6 +78,18 @@ public function connect($login, $password){
             {   
                   return false;
             }
+    }
+
+    //FUNCTION FORGOT_PASSWORD
+    public function forgot_password() {
+
+        $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
+        if(isset($_POST['email']) && isset($_POST['password'])){
+            $statement = $bdd->prepare('SELECT password FROM user WHERE email=?');
+            $statement->execute($_POST['email']);
+            $password = $statement->fetchColumn();
+        }
+  
     }
 
 
