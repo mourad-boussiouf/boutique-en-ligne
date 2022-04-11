@@ -20,6 +20,48 @@ class Inscription extends Controller
             $utilisateur=$user->getOne('email',$email);
             $telephoneExist=$user->getOne('telephone',$telephone);
 
+
+            if (!empty($_POST['nom']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['numero']) && !empty($_POST['nom']) && !empty($_POST['codepostal']) && !empty($_POST['ville'])) {
+                if ($password != $passwordverify) {
+                    $error1="verifiez votre mot de passe";
+                    self::render("inscription", compact('error1'));
+
+
+                } 
+                elseif (!empty($utilisateur)){
+                    $error1="Cet Email est déjà utilisé pour un autre compte";
+                    self::render("inscription", compact('error1'));
+
+                }
+                elseif(!empty($telephoneExist)){
+                    $error1="Ce numéro de téléphone est déjà utilisé";
+                    self::render("inscription", compact('error1'));
+                }
+                else {
+                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    $user = new Utilisateursmodel();
+                    $user->insert($email, $hash, $telephone, $adress, $nom, $prenom);
+                    array_push($success, 'Vous êtes bien inscrit');
+                    self::render("inscription", compact('success'));
+                    
+
+                }
+            } else {
+                echo "Certains champs sont vides";
+            }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
