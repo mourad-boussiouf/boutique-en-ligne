@@ -1,12 +1,16 @@
-<?php if (isset($error1)): ?>
-    <div class="error"><?= $error1 ?></div>
-<?php endif; ?>
 <?php if (!empty($success)): ?>
-    <div class="reussi"><?= $success[0] ?></div>
-<?php header('Refresh:3;url='.path.'connexion');?>
-<?php else: ?>
-    
-<main>
+<!-- Si connexion ok redirection sur la page d'accueil -->
+<div class="success"><?= $success[0]; ?></:>
+</div>
+<?php header('Refresh:3,' . path . 'accueil');?>
+<?php endif; ?>
+
+<?php if (!empty($errors)): ?>
+<!-- Si erreur de connexion, envoi du message d'erreur -->
+<div class="errors"><?= $errors[0]; ?></div>
+<?php endif; ?>
+
+
     <h1 class="titre">Connexion</h1>
     <form class="box" action="#" method="post">
     <label for="email">Email</label>
@@ -18,6 +22,5 @@
             <input id="connect" type="submit" value="se connecter" name="connect">
             <a href="<?= path ?>inscription">Pas encore inscrit? C'est par ici!</a>
     </form>
-</main>
 
-<?php endif; ?>
+

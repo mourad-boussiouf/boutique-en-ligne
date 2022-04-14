@@ -1,41 +1,63 @@
-.titre{
-    margin-top: 25px;
-}
-.box{
+
+
+/* CSS de la page authentification */
+form {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
+    flex-direction: column;
+    margin-right: 33px;
+    gap: 7px;
+    margin-top: 6px;
+    margin-bottom: 10px;
 }
-form{
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 250px 150px;
-    grid-gap: 25px;
-}
-form label{
-    font-size: 20px;
+
+.container {
+display: flex;
+flex-direction: row;
+justify-content: center;
 }
 form input {
-    border-radius: 5px;
+    border-radius: 1px;
 }
-#valider{
+
+form a {
+    color: #0c88b4;
+}
+
+.formconnect {
+    margin-top: 15px;
+}
+
+#connect {
     background: black;
     color: white;
-    min-height: 45px;
-    border-radius: 30px;
-    font-size: 20px;
+    font-size: 14px;
 }
-#valider:hover{
-    background: green;
+
+#connect:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+/* Messages d'erreur et de succès de connexion */
+.errors {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
 .error {
     background-color: red;
     color: white;
     text-align: center;
     font-size: x-large;
-    animation: entrance 2s ease-in-out 0s 1 normal forwards,
-    outro 1s ease-in-out 2s 1 normal forwards;
+}
+
+.success {
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
 }
 
 .reussi {
@@ -43,26 +65,7 @@ form input {
     color: white;
     text-align: center;
     font-size: x-large;
-    animation: entrance 2s ease-in-out 0s 1 normal forwards,
-    outro 2s ease-in-out 2s 1 normal forwards;
+
 }
 
-@keyframes entrance {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes outro {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}

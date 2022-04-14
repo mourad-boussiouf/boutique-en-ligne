@@ -6,16 +6,17 @@
 class Authentification extends Controller
 {
 
-    public static function index()
+    public static function indexcon()
     {
+        
+        
         $errors = [];
         $success = [];
         if (isset($_POST['connect'])) {
 
-            $usermodel = new UserModel();
+            $usermodel = new Usermodel();
             $user = $usermodel->getOne('email', htmlspecialchars($_POST['email']));
             if (!empty($user)) {
-
                 if ($user[0]['password'] == password_verify($_POST['password'], $user[0]['password'])) {
                     $_SESSION['id'] = $user[0]['id'];
                     $_SESSION['email'] = $user[0]['email'];
@@ -26,9 +27,7 @@ class Authentification extends Controller
                     self::render("authentification", compact("errors", "success"));
 
                 } 
-
-
-            }
+            } 
 
             $usermodel2 = new UserModel();
             $user2 = $usermodel2->getOne('telephone', htmlspecialchars($_POST['telephone']));
@@ -54,9 +53,13 @@ class Authentification extends Controller
                 
 
         }
-
         self::render("authentification", compact("errors", "success"));
 
+
+    }    
+
+    public static function indexreg() {
+        $success1 = [];
         if (isset($_POST['valider'])) {
             $email = htmlspecialchars($_POST['email']);
             $nom = htmlspecialchars($_POST['nom']);
@@ -70,14 +73,16 @@ class Authentification extends Controller
             $telephoneExist=$user->getOne('telephone',$telephone);
 
 
-            if (!empty($_POST['nom']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['numero']) && !empty($_POST['nom']) && !empty($_POST['codepostal']) && !empty($_POST['ville'])) {
+
+            if (!empty($_POST['nom']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['numero']) && !empty($_POST['nom']) && !empty($_POST['codepostal']) && !empty($_POST['ville'])) 
+            {
                 if ($password != $passwordverify) {
                     $error1="verifiez votre mot de passe";
                     self::render("authentification", compact('error1'));
 
 
                 } 
-                elseif (!empty($utilisateur)){
+                elseif (!empty($utilisateur)){ 
                     $error1="Cet Email est déjà utilisé pour un autre compte";
                     self::render("authentification", compact('error1'));
 
@@ -90,19 +95,23 @@ class Authentification extends Controller
                     $hash = password_hash($password, PASSWORD_DEFAULT);
                     $user = new UserModel();
                     $user->insert($email, $hash, $telephone, $adress, $nom, $prenom);
-                    array_push($success, 'Vous êtes bien inscrit');
-                    self::render("authentification", compact('success'));
+                    array_push($success1, 'Vous êtes bien inscrit');
+                    self::render("authentification", compact('success1'));
+                    echo "<div class = reussi> Vous êtes bien inscrit</div>";
                     
-
                 }
-            } else {
-                echo "Certains champs sont vides";
+
+            }else {
+                echo "<div class = errors> Veuillez remplir les champs</div>";
+            
             }
-
-
         }
+        self::render("authentification", compact('success1'));
     }
-
-
+        
 
 }
+
+
+
+?>

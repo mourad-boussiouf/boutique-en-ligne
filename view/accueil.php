@@ -33,7 +33,7 @@
 
 </div>
 
-<p> <img src=<?php echo "lol"; ?> alt="Italian Trulli">  </p>
+<p> <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKmv4QIUkkcLc8dT0UCP3tM0W9qRcwqzFVDA&usqp=CAU" alt="Italian Trulli">  </p>
 </body>
 
 

@@ -1,12 +1,11 @@
-<?php
+ <?php
 
 
-class Inscription extends Controller
+ class Inscription extends Controller
 {
 
-    
-    public static function Register()
-    {
+
+    public static function Register() {
         $success = [];
         if (isset($_POST['valider'])) {
             $email = htmlspecialchars($_POST['email']);
@@ -21,14 +20,16 @@ class Inscription extends Controller
             $telephoneExist=$user->getOne('telephone',$telephone);
 
 
-            if (!empty($_POST['nom']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['numero']) && !empty($_POST['nom']) && !empty($_POST['codepostal']) && !empty($_POST['ville'])) {
+
+            if (!empty($_POST['nom']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['numero']) && !empty($_POST['nom']) && !empty($_POST['codepostal']) && !empty($_POST['ville'])) 
+            {
                 if ($password != $passwordverify) {
                     $error1="verifiez votre mot de passe";
                     self::render("inscription", compact('error1'));
 
 
                 } 
-                elseif (!empty($utilisateur)){
+                elseif (!empty($utilisateur)){ 
                     $error1="Cet Email est déjà utilisé pour un autre compte";
                     self::render("inscription", compact('error1'));
 
@@ -44,21 +45,17 @@ class Inscription extends Controller
                     array_push($success, 'Vous êtes bien inscrit');
                     self::render("inscription", compact('success'));
                     
-
                 }
-            } else {
-                echo "Certains champs sont vides";
-            }
+
+            }else {
+                echo "<div class = errors> Veuillez remplir les champs</div>";
             
+            }
         }
         self::render("inscription",compact('success'));
-    }
-    public static function index()
-    {
-        self::render('inscription');
     }
 
 
 }
 
-?>
+?> 

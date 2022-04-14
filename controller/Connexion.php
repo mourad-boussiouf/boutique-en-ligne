@@ -12,10 +12,9 @@ class Connexion extends Controller
         $success = [];
         if (isset($_POST['connect'])) {
 
-            $usermodel = new UserModel();
+            $usermodel = new Usermodel();
             $user = $usermodel->getOne('email', htmlspecialchars($_POST['email']));
             if (!empty($user)) {
-
                 if ($user[0]['password'] == password_verify($_POST['password'], $user[0]['password'])) {
                     $_SESSION['id'] = $user[0]['id'];
                     $_SESSION['email'] = $user[0]['email'];
@@ -26,9 +25,7 @@ class Connexion extends Controller
                     self::render("connexion", compact("errors", "success"));
 
                 } 
-
-
-            }
+            } 
 
             $usermodel2 = new UserModel();
             $user2 = $usermodel2->getOne('telephone', htmlspecialchars($_POST['telephone']));
@@ -54,7 +51,6 @@ class Connexion extends Controller
                 
 
         }
-
         self::render("connexion", compact("errors", "success"));
 
         

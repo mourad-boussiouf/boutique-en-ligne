@@ -4,7 +4,7 @@
 class Controller
 {
 
-    public $path = "/boutique_en_ligne/";
+    public $path = "/boutique-en-ligne/";
 
     public function __construct()
     {
