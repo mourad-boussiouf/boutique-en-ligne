@@ -14,3 +14,4 @@ Class Search
         $params = [':search' => $search];
     }
 }
+?>
