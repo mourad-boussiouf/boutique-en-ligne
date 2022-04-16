@@ -1,7 +1,7 @@
 <?php
 
 
-class Produits extends Controller
+class Articles extends Controller
 {
     public function __construct()
     {

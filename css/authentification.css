@@ -6,14 +6,15 @@ form {
     flex-direction: column;
     margin-right: 33px;
     gap: 7px;
-    margin-top: 6px;
-    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-bottom: 15px;
 }
 
 .container {
 display: flex;
 flex-direction: row;
 justify-content: center;
+margin-top:-1px;
 }
 form input {
     border-radius: 1px;
@@ -39,14 +40,22 @@ form a {
 
 /* Messages d'erreur et de succès de connexion */
 .errors {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
     background-color: red;
     color: white;
     text-align: center;
     font-size: x-large;
+  }
 
-}
 
 .success {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
     background-color: limegreen;
     color: white;
     text-align: center;
@@ -55,6 +64,10 @@ form a {
 }
 
 .reussi {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
     background-color: limegreen;
     color: white;
     text-align: center;
@@ -62,12 +75,14 @@ form a {
 
 }
 
+
 .error {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
     background-color: red;
     color: white;
     text-align: center;
     font-size: x-large;
 }
-
-
-

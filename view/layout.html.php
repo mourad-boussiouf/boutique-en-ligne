@@ -1,5 +1,4 @@
 <?php
-echo 'Version PHP courante : ' . phpversion();
 $pageask = explode('/', $_GET['p']);
 ?>
 
@@ -61,7 +60,7 @@ $pageask = explode('/', $_GET['p']);
 <main>
         <?= $content ?>
     
-                </main>
+</main>
 <!-- footer -->
 
     <footer>

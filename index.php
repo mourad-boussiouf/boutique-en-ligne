@@ -35,6 +35,8 @@ $pageask = explode('/', $_GET['p']);
     Authentification::indexreg(); 
 }elseif ($pageask[0] == 'deconnexion') {
     Controller::disconnect($_SESSION['id']);
+}elseif ($pageask[0] == 'articles') {
+    Articles::index();
 }else{
     Accueil::index();
 }
