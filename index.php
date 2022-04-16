@@ -1,8 +1,3 @@
-<?php 
-
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,9 +15,8 @@ session_start();
                 <li><a href="#">Nouveautés</a></li>
                 <li><a href="#">T-shirt</a></li>
                 <li><a href="#">A propos</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="authentification.php">Authentification</a></li>
-                <button><li><a href="inscription.php">Inscription</a></li></button>
+                <li><a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
             </ul>
             <input type="search" placeholder="Rechercher">
         </nav>
@@ -33,14 +27,31 @@ session_start();
             <div class="cards">
                 <div class="card">
                     <a href="#"><img src="pictures/tshirt1.jpg" alt=""></a>
+                    <div class="name-art">
+                        Welcome to the gouffre
+                    </div>
+                    <div class="desc">
+                        T-shirt moulant Welcome to the gouffre
+                    </div>
+                    <div class="price">
+                        10$
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#"><img src="pictures/tshirt2.jpg" alt=""></a>
+                    <div class="name-art">
+                        Welcome to the gouffre
+                    </div>
+                    <div class="desc">
+                        T-shirt moulant Welcome to the gouffre
+                    </div>
+                    <div class="price">
+                        10$
+                    </div>
                 </div>
             </div>
-            <button class="new"><a href="#">Voir plus</a></button>
+            <!--<button class="new"><a href="#">Voir plus</a></button>-->
         </section>
-        <!--AUTRE-->
         <section class="main2">
             <h1 class="big-title"> Pour plus d'articles </h1>
             <div class="n1">
