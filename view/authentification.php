@@ -33,10 +33,6 @@
 
     <br> <br>
 
-
-
-
-
     <form class="box-conn" action="#" method="post">
     <h1 class="titre">Connexion</h1>
     <label for="email">Email</label>

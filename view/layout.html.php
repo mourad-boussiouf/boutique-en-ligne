@@ -76,7 +76,7 @@ $pageask = explode('/', $_GET['p']);
                 <a href="https://twitter.com/LeGouffre">
             </div>
 
-            <div class="savoir">
+            <div class="about">
                 <a href="">Decouvrez les gouffrés</a>
                 <a href="">Mentions légales</a>
             </div>
