@@ -42,8 +42,10 @@ $pageask = explode('/', $_GET['p']);
         <?php else : ?>
         <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
         <?php endif; ?>
-        <?php if($_SESSION['droit']==2):?>
+        <?php if(isset($_SESSION['id'])):?>
+            <?php if($_SESSION['droit']==2):?>
         <li class="admin"><a href="<?=path?>admin">Page admin</a></li>
+            <?php endif;?>
         <?php endif;?>
        </ul>
       </div>
