@@ -1,4 +1,5 @@
 <?php
+echo 'Version PHP courante : ' . phpversion();
 $pageask = explode('/', $_GET['p']);
 ?>
 
@@ -30,6 +31,7 @@ $pageask = explode('/', $_GET['p']);
 <!-- header -->
 <header> 
     <div class="nav">
+    
       <ul>
         <li class="home"><a href="<?= path ?>">Accueil</a></li>
         <li class="register"><a href="<?= path ?>authentification">co/ins</a></li>
