@@ -21,7 +21,7 @@
                             <p class="descriptionproduct"><?= $value['descr'] ?></p>
 
                         </div>
-                        <form action="#" method="post" name="pan">
+                        <form action="#" method="post" name="ajouter">
                             <input type="hidden" name="hidden" value="<?= $value['id'] ?>">
                             <input type="submit" name="achat" value="Acheter">
                         </form>

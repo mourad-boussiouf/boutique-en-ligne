@@ -11,7 +11,6 @@ class Articles extends Controller
     public static function index()
     {
         $pageask = explode('/', $_GET['p']);
-        $nombreArticlePages = 6;
         $model = new ArticlesModel();
         $modelcat = new CategorieModel();
         $modelsc = new SouscategorieModel();
@@ -19,7 +18,9 @@ class Articles extends Controller
         $scategorie = $modelsc->getALL();
         $search = "";
         $totalArticles = $model->nombreTotalArticles();
+        $nombreArticlePages = 20;
         $nombreDePages = ceil($totalArticles[0] / $nombreArticlePages);
+        
 
 
             if (isset($pageask[1]) && is_numeric($pageask[1])) {
