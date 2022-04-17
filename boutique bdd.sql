@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 16 avr. 2022 à 01:59
+-- Généré le : Dim 17 avr. 2022 à 21:12
 -- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Version de PHP : 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,61 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `boutique-en-ligne`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_product` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=141 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_categories` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name_categories`) VALUES
+(1, 'Couvre-chef'),
+(2, 'T-shirts');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commandes`
+--
+
+DROP TABLE IF EXISTS `commandes`;
+CREATE TABLE IF NOT EXISTS `commandes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `achat` text NOT NULL,
+  `date` datetime NOT NULL,
+  `price` int(11) NOT NULL,
+  `moyen_paiement` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -44,7 +99,24 @@ INSERT INTO `droits_user` (`id`, `nom`) VALUES
 
 -- --------------------------------------------------------
 
+--
+-- Structure de la table `historique`
+--
 
+DROP TABLE IF EXISTS `historique`;
+CREATE TABLE IF NOT EXISTS `historique` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `prices` int(11) NOT NULL,
+  `moyen_de_paiement` varchar(255) NOT NULL,
+  `date` timestamp NOT NULL,
+  `id_commande` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
 -- Structure de la table `products`
@@ -57,15 +129,24 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` int(11) NOT NULL,
   `date` timestamp NOT NULL,
   `image` text NOT NULL,
-  `description` text NOT NULL,
+  `image2` text NOT NULL,
+  `image3` text NOT NULL,
+  `descr` text NOT NULL,
   `id_categorie` int(11) NOT NULL,
   `id_souscategorie` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `products`
+--
 
+INSERT INTO `products` (`id`, `name`, `price`, `date`, `image`, `image2`, `image3`, `descr`, `id_categorie`, `id_souscategorie`) VALUES
+(1, 't shirt welcome to the gouffre', 20, '2022-04-16 01:57:35', 'tshirt1.jpg', '', '', 'Ce t-shirt confortable et 100% coton est idéal pour vos voyages interdimensionnels pour aller dire bonjour à Karin dans la salle du temps.', 1, 1),
+(2, 't shirt \"c\'est quoi ISSET ?\"', 20, '2022-04-16 01:57:35', 'tshirt3.jpg', '', '', 'ça renvoi TROUORFOLSE', 1, 1),
+(64, 'T-shirt \"Max ou crève\"', 20, '2022-04-17 21:05:27', 'tshirt2.jpg', '', '', 'Get max or die ouvrier du numérique', 1, 1);
 
-
+-- --------------------------------------------------------
 
 --
 -- Structure de la table `sous_categories`
@@ -84,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `sous_categories` (
 --
 
 INSERT INTO `sous_categories` (`id`, `name`, `id_categorie`) VALUES
-(8, 'collection_Quotes', 1);
+(1, 'collection_Quotes', 1);
 
 -- --------------------------------------------------------
 
@@ -103,19 +184,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `telephone`, `adresse`, `id_droit`, `nom`, `prenom`) VALUES
-(33, 'toto20@test.fr', '$2y$10$VJ.oJJmKWKeHCCkvB6epw.rsac.01oMU8kSoIqkG72VzsrpzfsRny', '0651242831', '44,f,efe13015fejfe', 1, 'f,efe', 'fefe'),
-(34, 'mourdddddddad.boussiouf@gmail.com', '$2y$10$Zdojz9OJHD.mM/58k/rzFOz2cd5m/D3w0x0vhIpAYmul66gLfLlNe', '0651249999', '99,Mourad Boussiouf13015Marseille', 1, 'Boussiouf', 'Mourad'),
-(20, 'mourad.boussiouf@gmail.com', '$2y$10$9mVG5OahgB18NIA1lDPyU.iBoiToTGm9WI0ugtWnoZnU/lCqSSk3O', '0651242831', '77,Boulevard Henri barnier13015Marseille', 2, 'Boussiouf', 'Mourad'),
-(32, 'toto4@toto.fr', '$2y$10$X4/oKiP5yitL9Vi9ZYqYQufDw5JjbJKZIC6OTMKsSWwQn8pPlpgUC', 'toto4@toto.fr', '44,Boussiouf13015Lyon', 1, 'Boussiouf', 'Mourad'),
-(31, 'toto5@toto.fr', '$2y$10$NUU.M4GY.Oa.Ie8Oeobw6O2nbCEn0leUHxSNcxiECvD4igz3qNt/O', '0651242899', '99,totorue13015lehood', 1, 'toto', 'toto'),
-(36, 'LOuradededed.boussiouf@gmail.com', '$2y$10$vCLN/DMZOUzcDfyDLjPnMeAUAZiF4exV3COq5BXEF5aHojb/RWXC2', '0651246969', '88,Mourad Boussiouf13015Marseille', 1, 'Boussiouf', 'Mourad');
+(38, 'mourad.boussiouf@gmail.com', '$2y$10$SLB3WCqJNmPpkHTA.W.MkOPVgAg3fsfQfiW8F9ipsrNdHLo/PwvKm', '0651242831', '44,Mourad Boussiouf13015Marseille', 1, 'Boussiouf', 'Mourad');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php
 
-class ArticleModel extends Model
+class ArticlesModel extends Model
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class ArticleModel extends Model
     }
 
 
-    public function TotalArticles() // COMPTE LE NOMBRE DARTICLES 
+    public function nombreTotalArticles() // COMPTE LE NOMBRE DARTICLES 
     {
         $sth = $this->_connexion->prepare('SELECT COUNT(*) AS nb_article FROM products');
         $sth->execute();
