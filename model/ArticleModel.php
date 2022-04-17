@@ -26,4 +26,12 @@ class ArticleModel extends Model
     }
 
 
+
+    public function getArticlesFormProducts($limit, $articles) // Requète pour avoir les produits pour affichage
+    {
+        $sth = $this->_connexion->prepare('SELECT * FROM products  LIMIT ' . $limit . ',' . $articles);
+        $sth->execute();
+        return $sth->fetchall(PDO::FETCH_ASSOC);
+
+    }
 }
