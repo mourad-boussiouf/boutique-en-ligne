@@ -11,4 +11,5 @@ class CategorieModel extends Model{
         $sth = $this->_connexion->prepare('INSERT INTO categories (name_categories) VALUES (?)');
         $sth -> execute(array($nameC));
     }
+
 }

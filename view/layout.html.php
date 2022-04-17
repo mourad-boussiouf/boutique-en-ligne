@@ -33,13 +33,13 @@ $pageask = explode('/', $_GET['p']);
     
       <ul>
         <li class="home"><a href="<?= path ?>">Accueil</a></li>
-        <li class="register"><a href="<?= path ?>authentification">co/ins</a></li>
         <li class="news"><a href="#">Nouveautés</a></li>
         <li class="tutorials"><a href="<?= path ?>articles">Vêtements</a></li>
         <li class="contact"><a href="#">À propos</a></li>
         <?php if (!isset($_SESSION['id'])): ?>
         <li class="connect"><a href="<?= path ?>connexion">Connexion</a></li>
         <li class="register"><a href="<?= path ?>inscription">Inscription</a></li>
+        <li class="register"><a href="<?= path ?>authentification">co/ins</a></li>
         <?php else : ?>
         <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
         <?php endif; ?>
