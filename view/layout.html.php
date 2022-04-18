@@ -53,6 +53,7 @@ $pageask = explode('/', $_GET['p']);
     <div class ="searchbar">
         <input type="search" placeholder="SEARCH">
     </div>
+    
 </header>
    
 <!-- DISPLAY DU VIEW -->
