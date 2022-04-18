@@ -34,4 +34,11 @@ class ArticlesModel extends Model
         return $sth->fetchall(PDO::FETCH_ASSOC);
 
     }
+
+
+    public function addArt($nom, $prix, $image, $image2, $descr,$cat, $sousCat) // Requète pour ajouter des produits PANEL ADMIN a venir
+    {
+         $sth = $this->_connexion->prepare('INSERT INTO products (name, price, date, image, image2, ,descr, id_categorie, id_souscategorie) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?)');
+         $sth->execute(array($nom, $prix, $image, $image2,$descr,$cat, $sousCat));
+    }
 }
