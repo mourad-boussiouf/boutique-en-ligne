@@ -48,7 +48,7 @@ $pageask = explode('/', $_GET['p']);
 <div class= "admin">
     
         <li class="admin"><a href="<?=path?>adminarticles">Gestion ARTICLES & CATEGORIES</a></li>
-        <li class="adminuser"><a href="<?=path?>admin">Gestion UTILISATEURS</a></li>
+        <li class="adminuser"><a href="<?=path?>adminuser">Gestion UTILISATEURS</a></li>
         <li class="adminorder"><a href="<?=path?>admin">Gestion COMMANDES</a></li>
     
 </div>

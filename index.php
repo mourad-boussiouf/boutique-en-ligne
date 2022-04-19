@@ -41,6 +41,8 @@ $pageask = explode('/', $_GET['p']);
     Admin::index();
 }elseif ($pageask[0] == 'adminarticles') {
     Admin::articles();
+}elseif ($pageask[0] == 'adminuser') {
+    Admin::user();
 }else{
     Accueil::index();
 }

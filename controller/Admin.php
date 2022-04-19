@@ -65,6 +65,14 @@ class Admin extends Controller
         }
         self::renderPanelAdmin('adminarticles', compact('categorieAll','souscategorieAll','prod'));
     }
+
+
+    public static function user() // ACCEUIL PANEL ADMIN
+    {
+        $user = new UserModel();
+        $userlist = $user->getALL();
+        self::renderPanelAdmin('adminuser', compact('userlist'));
+    }
 }
 
 
