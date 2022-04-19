@@ -39,6 +39,8 @@ $pageask = explode('/', $_GET['p']);
     Articles::index();
 }elseif ($pageask[0] == 'admin') {
     Admin::index();
+}elseif ($pageask[0] == 'adminarticles') {
+    Admin::articles();
 }else{
     Accueil::index();
 }
