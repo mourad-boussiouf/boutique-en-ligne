@@ -77,10 +77,10 @@ class Admin extends Controller
             $toModifyId = $pageask[1];
             $modUser = new UserModel();
             $selectedUser = $modUser->getOne('id',$toModifyId);
-            echo $selectedUser[0]['email'];
+            
 
             
-           
+        self::renderPanelAdmin('adminuser', compact('selectedUser','userlist'));
         }
         self::renderPanelAdmin('adminuser', compact('userlist'));
     }
