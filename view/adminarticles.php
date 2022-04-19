@@ -56,12 +56,14 @@
 <table class = tablesouscat>
   <tr>
     <th>Id Produit</th>
-    <th>Nom Nom produit</th>
+    <th>Nom produit</th>
+    <th>Prix produit</th>
   </tr>
 <?php foreach ($prod as $value): ?>
     <tr>
     <td><?=$value['id'] ?></td>
     <td><?=$value['name'] ?></td>
+    <td><?=$value['price'] ?></td>
   </tr>
 <?php endforeach; ?>  
 </table>

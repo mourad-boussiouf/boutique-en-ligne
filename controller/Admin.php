@@ -46,7 +46,7 @@ class Admin extends Controller
             $delete = new ArticlesModel();
             $delete->deleteArticle($idproduct);
             // $delete->deleteArticle($idproductint);
-            echo "<div class = error> Article correctement supprimé de la BDD ! </div>";
+            echo "<div class = error> Les données liées à cet ID ont étaient effacées. </div>";
             header('Refresh:2;url='.path.'adminarticles');
         }
         self::renderPanelAdmin('adminarticles', compact('categorieAll','souscategorieAll','prod'));

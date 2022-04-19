@@ -37,16 +37,21 @@ $pageask = explode('/', $_GET['p']);
       <ul>
         <li class="home"><a href="<?= path ?>">Retour à l'accueil</a></li>
         <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
-        <li class="admin"><a href="<?=path?>admin">Panel admin</a></li>
-        <li class="admin"><a href="<?=path?>adminarticles">Gestion articles&catégories</a></li>
-        <li class="adminuser"><a href="<?=path?>admin">Gestion utilisateurs</a></li>
-        <li class="adminorder"><a href="<?=path?>admin">Gestion commandes</a></li>
+        <li class="admin"><a href="<?=path?>admin">Statistiques</a></li>
        </ul>
       </div>
+
     <div class ="searchbar">
         <input type="search" placeholder="SEARCH">
     </div>
+
+<div class= "admin">
     
+        <li class="admin"><a href="<?=path?>adminarticles">Gestion ARTICLES & CATEGORIES</a></li>
+        <li class="adminuser"><a href="<?=path?>admin">Gestion UTILISATEURS</a></li>
+        <li class="adminorder"><a href="<?=path?>admin">Gestion COMMANDES</a></li>
+    
+</div>
 </header>
    
 <!-- DISPLAY DU VIEW -->

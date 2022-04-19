@@ -3,6 +3,10 @@ margin: 0;
 padding: 0;
 }
 
+li{
+  list-style: none;
+}
+
 header {
 
 background-color: #444;
@@ -69,6 +73,25 @@ align-items: center!important;
     cursor: default;
   }
 
+.admin a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+  width: 110%;
+  border-radius: .5em;
+}
+
+.admin li:hover {
+background-color: black;
+}
+
+.admin {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
    
   @media screen and (min-width: 600px) {
