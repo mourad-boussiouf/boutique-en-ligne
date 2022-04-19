@@ -5,7 +5,9 @@
     margin-top: -110px;
 }
 
-
+td {
+    text-align: center;
+    }
 
 .space {
     height: 44px;

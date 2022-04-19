@@ -69,8 +69,19 @@ class Admin extends Controller
 
     public static function user() // ACCEUIL PANEL ADMIN
     {
+        $pageask = explode('/', $_GET['p']);
         $user = new UserModel();
         $userlist = $user->getALL();
+        
+        if (isset($pageask[1]) && is_numeric($pageask[1])) {
+            $toModifyId = $pageask[1];
+            $modUser = new UserModel();
+            $selectedUser = $modUser->getOne('id',$toModifyId);
+            echo $selectedUser[0]['email'];
+
+            
+           
+        }
         self::renderPanelAdmin('adminuser', compact('userlist'));
     }
 }
