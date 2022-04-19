@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
 $allProducts = $bdd->query('SELECT * FROM products ORDER BY id DESC');
 if(isset($_GET['s']) && !empty($_GET['s'])){
     $search = htmlspecialchars($_GET['s']);
-    $allProducts = $bdd->query('SELECT name, price, image, descr FROM user WHERE name LIKE "%'.$search.'%" 
+    $allProducts = $bdd->query('SELECT * FROM products WHERE name LIKE "%'.$search.'%" 
     ORDER BY id DESC');
 }
 ?>
@@ -40,17 +40,17 @@ if(isset($_GET['s']) && !empty($_GET['s'])){
             <?php 
 
             if($allProducts->rowCount() > 0){
-                while($products = $allProducts->fetch()){
+                while($product = $allProducts->fetch()){
                     ?>
-                    <p> <?= $products['name']; ?> </p>
-                    <p> <?= $products['price']; ?> </p>
-                    <p> <?= $products['image']; ?> </p>
-                    <p> <?= $products['descr']; ?> </p>
+                    <p> <?= $product['name']; ?> </p>
+                    <p> <?= $product['price']; ?> </p>
+                    <p> <?= $product['image']; ?> </p>
+                    <p> <?= $product['descr']; ?> </p>
                     <?php
                 }
             }else {
                 ?>
-                <p>Aucun produit ne correspond à votre recherche</p>
+                <p>Aucun article ne correspond à votre recherche</p>
                 <?php
             }
             ?>
