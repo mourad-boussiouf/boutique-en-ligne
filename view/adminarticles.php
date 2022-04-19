@@ -65,3 +65,11 @@
   </tr>
 <?php endforeach; ?>  
 </table>
+
+<form action="" method="POST">
+    <label for="idproduct">ID Produit</label>
+    <input type="text" id="idproduct" name="idproduct" placeholder="ID du produit" required>
+    <input type="submit" name="delete" value = "Effacer">
+</form>
+
+

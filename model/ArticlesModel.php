@@ -17,7 +17,7 @@ class ArticlesModel extends Model
 
     }
 
-    public function getArticleByDate() // NOUS SORT UN PRODUIT BY SA DATE 
+    public function getArticlesByDate() // read tous les produits ordonnés par le plus recent
     {
         $sth = $this->_connexion->prepare('SELECT * FROM ' . $this->table . ' ORDER BY DATE DESC LIMIT 5 ');
         $sth->execute();
@@ -27,7 +27,7 @@ class ArticlesModel extends Model
 
 
 
-    public function getArticlesFormProducts($limit, $articles) // Requète pour avoir les produits pour affichage
+    public function getArticlesFormProducts($limit, $articles) // read tous les produits avec une limit
     {
         $sth = $this->_connexion->prepare('SELECT * FROM products  LIMIT ' . $limit . ',' . $articles);
         $sth->execute();
@@ -36,10 +36,17 @@ class ArticlesModel extends Model
     }
 
 
-    public function addArticle($nom, $prix, $image, $image2, $descr, $cat, $sousCat) // Requète pour ajouter des produits PANEL ADMIN a venir
+    public function addArticle($nom, $prix, $image, $image2, $descr, $cat, $sousCat) // insert un produit en bdd selon arguments
     {
          $sth = $this->_connexion->prepare('INSERT INTO products (name, price, date, image, image2, descr, id_categorie, id_souscategorie) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?)');
          $sth->execute(array($nom, $prix, $image, $image2,$descr, $cat, $sousCat));
     }
+
+    public function deleteArticle($id) // supprime un produit selon son id en argument
+    {
+        $sth = $this->_connexion->prepare('DELETE FROM products WHERE id=?');
+        $sth->execute(array($id));
+    }
+
 
 }
