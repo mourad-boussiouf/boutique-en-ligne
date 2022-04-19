@@ -28,6 +28,7 @@ class Articles extends Controller
                 $pages = $pageask[1];
                 $premierArticle = ($pages - 1) * $nombreArticlePages;
                 $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
+                
             } elseif (isset($pageask[2]) && is_numeric($pageask[2])) {
                 $pages = $pageask[2];
                 $premierArticle = ($pages - 1) * $nombreArticlePages;

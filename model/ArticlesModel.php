@@ -36,9 +36,10 @@ class ArticlesModel extends Model
     }
 
 
-    public function addArt($nom, $prix, $image, $image2, $descr,$cat, $sousCat) // Requète pour ajouter des produits PANEL ADMIN a venir
+    public function addArticle($nom, $prix, $image, $image2, $descr, $cat, $sousCat) // Requète pour ajouter des produits PANEL ADMIN a venir
     {
-         $sth = $this->_connexion->prepare('INSERT INTO products (name, price, date, image, image2, ,descr, id_categorie, id_souscategorie) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?)');
-         $sth->execute(array($nom, $prix, $image, $image2,$descr,$cat, $sousCat));
+         $sth = $this->_connexion->prepare('INSERT INTO products (name, price, date, image, image2, descr, id_categorie, id_souscategorie) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?)');
+         $sth->execute(array($nom, $prix, $image, $image2,$descr, $cat, $sousCat));
     }
+
 }

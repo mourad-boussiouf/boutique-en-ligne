@@ -26,9 +26,10 @@ $pageask = explode('/', $_GET['p']);
     } ?>.js"></script>
     <title></title>
 </head>
-<body>
 <?php if(isset($_SESSION['id'])):?>
             <?php if($_SESSION['droit']==2):?>
+<body>
+
 <!-- header -->
 <header> 
     <div class="nav">
