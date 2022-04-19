@@ -6,10 +6,10 @@ class CategorieModel extends Model{
         $this->getConnection(); 
     }
 
-    public function addCat($nameC) // INSERT CAT EN PREVISION PANEL ADMIN
+    public function addCategorie($newCatName) // Ajoute une catégorie
     {
         $sth = $this->_connexion->prepare('INSERT INTO categories (name) VALUES (?)');
-        $sth -> execute(array($nameC));
+        $sth -> execute(array($newCatName));
     }
 
 }

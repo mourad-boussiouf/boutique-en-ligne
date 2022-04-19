@@ -42,11 +42,25 @@ class Admin extends Controller
         if(isset($_POST['delete'])){
             var_dump($_POST['idproduct']);
             $idproduct = $_POST['idproduct'];
-            // $idproductint = intval($_POST['idproduct']);
             $delete = new ArticlesModel();
             $delete->deleteArticle($idproduct);
-            // $delete->deleteArticle($idproductint);
             echo "<div class = error> Les données liées à cet ID ont étaient effacées. </div>";
+            header('Refresh:2;url='.path.'adminarticles');
+        }
+        if(isset($_POST['createcat'])){
+            
+            $newCatName = $_POST['newcatname'];
+            $createCat = new CategorieModel();
+            $createCat->addCategorie($newCatName);
+            echo "<div class = reussi> Cette catégorie a été créee.</div>";
+            header('Refresh:2;url='.path.'adminarticles');
+        }
+        if(isset($_POST['createsubcat'])){
+            
+            $newSubCatName = $_POST['newsubcatname'];
+            $createCat = new SouscategorieModel();
+            $createCat->addSousCat($newSubCatName);
+            echo "<div class = reussi> Cette sous-catégorie a été créee.</div>";
             header('Refresh:2;url='.path.'adminarticles');
         }
         self::renderPanelAdmin('adminarticles', compact('categorieAll','souscategorieAll','prod'));

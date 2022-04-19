@@ -6,9 +6,9 @@ class SouscategorieModel extends Model{
         $this->getConnection();
     }
 
-    public function addSousCat($nameSC,$idcat) // INSERT souscatégirue en prevision panel admin
+    public function addSousCat($newSubcatName) // Ajoute une sous catégorie
     {
-        $sth = $this->_connexion->prepare('INSERT INTO sous_categories (name, id_categorie) VALUES (?, ?)');
-        $sth -> execute(array($nameSC,$idcat));
+        $sth = $this->_connexion->prepare('INSERT INTO sous_categories (name) VALUES (?)');
+        $sth -> execute(array($newSubcatName));
     }
 }
