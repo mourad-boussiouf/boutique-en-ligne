@@ -37,6 +37,8 @@ $pageask = explode('/', $_GET['p']);
     Controller::disconnect($_SESSION['id']);
 }elseif ($pageask[0] == 'articles') {
     Articles::index();
+}elseif ($pageask[0] == 'admin') {
+    Admin::index();
 }else{
     Accueil::index();
 }

@@ -36,7 +36,7 @@ class Controller
     }
 
 
-    public static function renderAdmin($fichier, $data = [])
+    public static function renderPanelAdmin($fichier, $data = [])
     {
         extract($data);
         ob_start();

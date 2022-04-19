@@ -8,7 +8,7 @@ class CategorieModel extends Model{
 
     public function addCat($nameC) // INSERT CAT EN PREVISION PANEL ADMIN
     {
-        $sth = $this->_connexion->prepare('INSERT INTO categories (name_categories) VALUES (?)');
+        $sth = $this->_connexion->prepare('INSERT INTO categories (name) VALUES (?)');
         $sth -> execute(array($nameC));
     }
 
