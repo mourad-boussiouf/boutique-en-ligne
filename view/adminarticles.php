@@ -1,6 +1,7 @@
 
 <h2>CATEGORIES ET SOUS CATEGORIES</h2>
 <p>Catégories et sous catégorie existantes : </p>
+
 <table class = tablecat>
   <tr>
     <th>Id catégorie</th>
@@ -29,6 +30,22 @@
 
 <?php endforeach; ?>
 </table>
+<div class = addcatform>
+<form action="" method="POST">
+    <label for="newcatname">Créer une catégorie</label>
+    <input type="text" id="newcatname" name="newcatname" placeholder="Nom voulu pour la catégorie" required>
+    <input type="submit" name="delete" value = "Créer">
+</form>
+<div class = space></div>
+<form action="" method="POST">
+    <label for="newsubcatname">Créer une sous-catégorie</label>
+    <input type="text" id="newsubcatname" name="newsubcatname" placeholder="Nom voulu pour la sous-catégorie" required>
+    <input type="submit" name="delete" value = "Créer">
+</form>
+<div class = space></div>
+</div>
+
+
 
 <h2>ARTICLES</h2>
 <p>Ajouter un nouvel article</p>

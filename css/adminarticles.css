@@ -1,3 +1,17 @@
+
+.addcatform
+{
+    margin-left: 16rem;
+    margin-top: -110px;
+}
+
+
+
+.space {
+    height: 44px;
+}
+
+
 .errors {
     position:sticky;
     width: 100%;
