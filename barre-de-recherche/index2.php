@@ -1,10 +1,11 @@
 <?php 
 
 $bdd = new PDO('mysql:host=localhost;dbname=boutique', 'root', '');
-$allUsers = $bdd->query('SELECT * FROM user ORDER BY id DESC');
+$allProducts = $bdd->query('SELECT * FROM products ORDER BY id DESC');
 if(isset($_GET['s']) && !empty($_GET['s'])){
-    $recherche = htmlspecialchars($_GET['s']);
-    $allUsers = $bdd->query('SELECT login FROM user WHERE login LIKE "%'.$recherche.'%" ORDER BY id DESC');
+    $search = htmlspecialchars($_GET['s']);
+    $allProducts = $bdd->query('SELECT name, price, image, descr FROM user WHERE name LIKE "%'.$search.'%" 
+    ORDER BY id DESC');
 }
 ?>
 
@@ -15,7 +16,7 @@ if(isset($_GET['s']) && !empty($_GET['s'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="stylesheet" href="boutique.css">
+    <link rel="stylesheet" href="../boutique.css">
 </head>
 <body>
     <header class="main-head">
@@ -35,18 +36,21 @@ if(isset($_GET['s']) && !empty($_GET['s'])){
         </nav>
     </header>
     <main>
-        <section class="afficher_utilisateur">
+        <section class="afficher_produits">
             <?php 
 
-            if($allUsers->rowCount() > 0){
-                while($user = $allUsers->fetch()){
+            if($allProducts->rowCount() > 0){
+                while($products = $allProducts->fetch()){
                     ?>
-                    <p> <?= $user['login']; ?> </p>
+                    <p> <?= $products['name']; ?> </p>
+                    <p> <?= $products['price']; ?> </p>
+                    <p> <?= $products['image']; ?> </p>
+                    <p> <?= $products['descr']; ?> </p>
                     <?php
                 }
             }else {
                 ?>
-                <p>Aucun user trouvé</p>
+                <p>Aucun produit ne correspond à votre recherche</p>
                 <?php
             }
             ?>
