@@ -16,8 +16,8 @@
 <label for="short">Modifier mon nom</label>
 <input type="text" id="lastnameuser" name="lastnameuser" value=<?= $_SESSION['nom'] ?> required>
 <label for="short">Modifier mon prénom</label>
-<input type="text" id="firstnameuser" name="firstnameuser" value=<?= $_SESSION['nom'] ?> required>
-<input type="submit" name="modifyuser" value ="Modifier">
+<input type="text" id="firstnameuser" name="firstnameuser" value=<?= $_SESSION['prenom'] ?> required>
+<input type="submit" name="mesinfosmodify" value ="Modifier">
 </form>
 
 <a href="<?=path?>adminuser">Annuler la modification</a>
