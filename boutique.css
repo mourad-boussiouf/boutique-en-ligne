@@ -112,11 +112,6 @@ section .new a {
     height: 89px;
     border-radius: 0;
 }
-
-.box-conn .psw {
-    
-}
-
 /*INSCRIPTION*/
 .box {
     background-color: rgba(250, 250, 250, 1);
@@ -145,7 +140,6 @@ section .new a {
     height: 89px;
     border-radius: 0;
 }
-
 /*PAGE AUTHENTIFICATION*/
 .box {
     float: right;
@@ -154,3 +148,24 @@ section .new a {
 .box-conn {
     float: left;
 }
+/*PAGE ARTICLE INDIVIDUELLE*/
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 380px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
