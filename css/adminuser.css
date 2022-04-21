@@ -5,3 +5,50 @@ text-align: center;
 #adressuser {
 width: 500px;
 }
+
+.errors {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+  }
+
+
+.success {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+.reussi {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+.error {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}

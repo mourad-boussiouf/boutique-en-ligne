@@ -14,10 +14,10 @@ class Usermodel extends Model
         $sth->execute(array($value1, $value2, $value3, $value4, $value5, $value6));
     }
 
-    public function updateAll($value1, $value2, $value3, $value4, $value5, $userId)
+    public function updateAll($value1, $value2, $value3, $value4, $value5, $value6, $userId)
     {
-        $sth = $this->_connexion->prepare('UPDATE `user`SET `email` = ? WHERE `id` = ?');
-        $sth->execute(array($value1, $value2, $value3, $value4, $value5, $userId));
+        $sth = $this->_connexion->prepare('UPDATE `user` SET `email` = ?, `telephone` = ?, `adresse` = ?, `id_droit` = ?,  `nom` = ?,  `prenom` = ? WHERE `id` = ?');
+        $sth->execute(array($value1, $value2, $value3, $value4, $value5, $value6, $userId));
     }
 
     public function getSpecific($pageask, $id)

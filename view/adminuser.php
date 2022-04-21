@@ -30,15 +30,10 @@
 <?php if (isset($pageask[1])): ?>
 
     <h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
-<?php  $selectedUser[0]['email']; 
-var_dump(trim($selectedUser[0]['adresse'])," ");
-$empty="";
-$space=" ";
-?>
 
 <form action="" method="POST">
     <label for="name">Id utilisateur</label>
-    <input type="text" id="iduser" name="iduser" value=<?= $selectedUser[0]['id']; ?> required>
+    <input type="text" id="iduser" name="iduser" placeholder=<?= $selectedUser[0]['id']; ?>  disabled="disabled">
     <label for="price">Email utilisateur</label>
     <input type="text" id="emailuser" name="emailuser" value=<?= $selectedUser[0]['email']; ?> required>
     <label for="image">Telephone utilisateur</label>

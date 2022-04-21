@@ -79,17 +79,17 @@ class Admin extends Controller
             $selectedUser = $modUser->getOne('id',$toModifyId);
 
             if (isset($_POST['modifyuser'])) {
-            $updateId = $_POST['iduser'];
+            $updateId = $selectedUser[0]['id'];
             $updateEmail = $_POST['emailuser'];
             $updatePhone = $_POST['phoneuser'];
             $updateAdress = $_POST['adressuser'];
             $updateRank = $_POST['rankuser'];
             $updateNom = $_POST['lastnameuser'];
             $updatePrenom = $_POST['firstnameuser'];
-
-            
-            
-
+            $selectTheUser = new UserModel();
+            $updateTheUser = $selectTheUser->updateAll($updateEmail, $updatePhone, $updateAdress, $updateRank, $updateNom, $updatePrenom, $updateId);
+            echo "<div class = reussi> Cet utilisateur à été modifié.</div>";
+            header('Refresh:1.5;url='.path.'adminuser');
             }
             
 
