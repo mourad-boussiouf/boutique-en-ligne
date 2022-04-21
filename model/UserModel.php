@@ -20,6 +20,12 @@ class Usermodel extends Model
         $sth->execute(array($value1, $value2, $value3, $value4, $value5, $value6, $userId));
     }
 
+    public function updateMesinfos($value1, $value2, $value3, $value4, $value5, $userId)
+    {
+        $sth = $this->_connexion->prepare('UPDATE `user` SET `email` = ?, `telephone` = ?, `adresse` = ?,  `nom` = ?,  `prenom` = ? WHERE `id` = ?');
+        $sth->execute(array($value1, $value2, $value3, $value4, $value5, $userId));
+    }
+
     public function getSpecific($pageask, $id)
     {
         $sth = $this->_connexion->prepare("SELECT $pageask FROM $this->table WHERE id=$id");

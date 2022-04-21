@@ -91,9 +91,9 @@ class Admin extends Controller
             echo "<div class = reussi> Cet utilisateur à été modifié.</div>";
             header('Refresh:1.5;url='.path.'adminuser');
             }
-            
 
-            
+
+    
         self::renderPanelAdmin('adminuser', compact('selectedUser','userlist'));
         }
         self::renderPanelAdmin('adminuser', compact('userlist'));
