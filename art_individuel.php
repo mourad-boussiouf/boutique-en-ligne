@@ -18,7 +18,9 @@
   <a target="_blank" href="#">
     <img src="pictures/T-shirt-noir.jpg" alt="T-shirt noir" width="600" height="400">
   </a>
-  <div class="desc"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat quasi quos reiciendis laborum reprehenderit facilis sint dignissimos, rem corporis perspiciatis? 
+  <div class="desc">
+      <h3>Description</h3>
+       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat quasi quos reiciendis laborum reprehenderit facilis sint dignissimos, rem corporis perspiciatis? 
       Cupiditate rerum nostrum corrupti nisi quo, similique rem autem.</div>
 </div>
 
