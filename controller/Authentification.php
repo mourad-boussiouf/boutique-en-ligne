@@ -18,9 +18,11 @@ class Authentification extends Controller
                     $_SESSION['id'] = $user[0]['id'];
                     $_SESSION['email'] = $user[0]['email'];
                     $_SESSION['nom'] = $user[0]['nom'];
-                    $_SESSION['prenom'] = $user[0]['prenom'];
+                    $_SESSION['telephone'] = $user[0]['telephone'];
+                    $_SESSION['adresse'] = $user[0]['adresse'];
                     $_SESSION['droit'] =$user[0]['id_droit'];
-                    $success[] = 'Bienvenue ' . $user[0]['prenom'];
+                    $_SESSION['prenom'] = $user[0]['prenom'];
+                    $_SESSION['nom'] = $user[0]['nom'];
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user[0]['prenom']."</div>";
                 } 
@@ -31,12 +33,14 @@ class Authentification extends Controller
             if (!empty($user2)) {
 
                 if ($user2[0]['password'] == password_verify($_POST['password'], $user2[0]['password'])) {
-                    $_SESSION['id'] = $user2[0]['id'];
-                    $_SESSION['email'] = $user2[0]['email'];
-                    $_SESSION['nom'] = $user2[0]['nom'];
-                    $_SESSION['prenom'] = $user2[0]['prenom'];
-                    $_SESSION['droit'] =$user2[0]['id_droit'];
-                    $success[] = 'Bienvenue ' . $user2[0]['prenom'];
+                    $_SESSION['id'] = $user[0]['id'];
+                    $_SESSION['email'] = $user[0]['email'];
+                    $_SESSION['nom'] = $user[0]['nom'];
+                    $_SESSION['telephone'] = $user[0]['telephone'];
+                    $_SESSION['adresse'] = $user[0]['adresse'];
+                    $_SESSION['droit'] =$user[0]['id_droit'];
+                    $_SESSION['prenom'] = $user[0]['prenom'];
+                    $_SESSION['nom'] = $user[0]['nom'];
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user2[0]['prenom']."</div>";
                 } 

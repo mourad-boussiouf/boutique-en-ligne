@@ -36,18 +36,18 @@ $pageask = explode('/', $_GET['p']);
       <ul>
         <li class="home"><a href="<?= path ?>">Accueil</a></li>
         <li class="news"><a href="#">Nouveautés</a></li>
-        <li class="tutorials"><a href="<?= path ?>articles">Vêtements</a></li>
+        <li class="articles"><a href="<?= path ?>articles">Vêtements</a></li>
         <li class="contact"><a href="#">À propos</a></li>
         <?php if (!isset($_SESSION['id'])): ?>
         <li class="connect"><a href="<?= path ?>connexion">Connexion</a></li>
         <li class="register"><a href="<?= path ?>inscription">Inscription</a></li>
-        <li class="register"><a href="<?= path ?>authentification">co/ins</a></li>
-        <?php else : ?>
-        <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
+        <li class="auth"><a href="<?= path ?>authentification">co/ins</a></li>
         <?php endif; ?>
         <?php if(isset($_SESSION['id'])):?>
+        <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
+        <li class="mesinfos"><a href="<?= path ?>mesinfos">Mes informations</a></li>
             <?php if($_SESSION['droit']==2):?>
-        <li class="admin"><a href="<?=path?>admin">Page admin</a></li>
+            <li class="admin"><a href="<?=path?>admin">Page admin</a></li>
             <?php endif;?>
         <?php endif;?>
        </ul>
