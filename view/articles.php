@@ -41,4 +41,8 @@ var_dump($pageask[2]);?>
         <!-- Page d'article individuelle -->
 <?php if (is_numeric($pageask[1])): ?>
 <p>caca</p>
+
+
+
+<a href="<?=path?>articles">Retours page articles</a>
 <?php endif; ?>

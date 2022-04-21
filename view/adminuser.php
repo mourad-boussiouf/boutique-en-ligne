@@ -31,8 +31,9 @@
 
     <h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
 <?php  $selectedUser[0]['email']; 
-var_dump($selectedUser[0]['adresse']);
-
+var_dump(trim($selectedUser[0]['adresse'])," ");
+$empty="";
+$space=" ";
 ?>
 
 <form action="" method="POST">
@@ -44,7 +45,7 @@ var_dump($selectedUser[0]['adresse']);
     <input type="text" id="phoneuser" name="phoneuser"value=<?= $selectedUser[0]['telephone']; ?> required>
     <br>
     <label for="adressuser">Adresse utilisateur</label>
-    <input type="text" id="adressuser" name="adressuser" value=<?= $selectedUser[0]['adresse']; ?>   required>
+    <input type="text" id="adressuser" name="adressuser" value="<?= $selectedUser[0]['adresse'] ?>"   required>
     <br>
     <label for="short">Niveau de droit</label>
     <input type="text" id="rankuser" name="rankuser" value=<?= $selectedUser[0]['id_droit']; ?> required>

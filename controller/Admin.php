@@ -77,6 +77,20 @@ class Admin extends Controller
             $toModifyId = $pageask[1];
             $modUser = new UserModel();
             $selectedUser = $modUser->getOne('id',$toModifyId);
+
+            if (isset($_POST['modifyuser'])) {
+            $updateId = $_POST['iduser'];
+            $updateEmail = $_POST['emailuser'];
+            $updatePhone = $_POST['phoneuser'];
+            $updateAdress = $_POST['adressuser'];
+            $updateRank = $_POST['rankuser'];
+            $updateNom = $_POST['lastnameuser'];
+            $updatePrenom = $_POST['firstnameuser'];
+
+            
+            
+
+            }
             
 
             
