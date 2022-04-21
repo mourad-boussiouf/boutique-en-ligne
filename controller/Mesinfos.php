@@ -10,7 +10,7 @@ class Mesinfos extends Controller
 
 
 
-
+        self::render('mesinfos');
     }
 
 }
