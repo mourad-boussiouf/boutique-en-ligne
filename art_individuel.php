@@ -16,12 +16,18 @@
 
 <div class="gallery">
   <a target="_blank" href="#">
-    <img src="pictures/T-shirt-noir.jpg" alt="T-shirt noir" width="600" height="400">
+    <img src="pictures/T-shirt-noir.jpg" alt="T-shirt noir">
   </a>
   <div class="desc">
       <h3>Description</h3>
        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat quasi quos reiciendis laborum reprehenderit facilis sint dignissimos, rem corporis perspiciatis? 
       Cupiditate rerum nostrum corrupti nisi quo, similique rem autem.</div>
+</div>
+<div class="gallery1">
+  <div class="price">
+      0,00$
+  </div>
+  <input type="number" min="1" max="10" />
 </div>
 
     </main>
