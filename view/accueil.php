@@ -9,9 +9,7 @@
 </head>
 <body>
 <div id="menu">
-                
-    <p>Menu</p>
-                       
+      
     <a href="<?= path ?>">Accueil</a>
 
     <?php if (!isset($_SESSION['id'])): ?>
@@ -30,11 +28,16 @@
     <a href="<?=path?>deco">deconnexion</a>
     <?php endif;?>
 
-
 </div>
 
-<p> <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKmv4QIUkkcLc8dT0UCP3tM0W9qRcwqzFVDA&usqp=CAU" alt="Italian Trulli">  </p>
-</body>
+<h1>Bienvenue sur les gouffrés.max</h1>
+
+<p>Nos produits phares : </p>
+
+
+
+
+
 
 
 </html>

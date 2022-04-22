@@ -26,11 +26,7 @@ define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 $pageask = explode('/', $_GET['p']);
 
 
- if ($pageask[0] == 'connexion') {
-    Connexion::index();
-}elseif ($pageask[0] == 'inscription') {
-    Inscription::Register();
-}elseif ($pageask[0] == 'authentification'){
+if ($pageask[0] == 'authentification'){
     Authentification::indexcon();
     Authentification::indexreg(); 
 }elseif ($pageask[0] == 'deconnexion') {
