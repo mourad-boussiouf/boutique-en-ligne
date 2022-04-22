@@ -171,6 +171,14 @@ div.gallery {
     background-color: rgb(230, 230, 230);
     float: right;
     width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gallery1 input {
+      width: 40px;
+      height: 30px;
   }
 
   .gallery1 input:in-range {
@@ -180,3 +188,18 @@ div.gallery {
   .gallery1 input:out-of-range {
       border: 2px solid red;
   }
+
+/*FOOTER*/
+footer {
+    background: black;
+    padding: 40px;
+    bottom: 0;
+}
+
+footer td {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    float: right;
+}
