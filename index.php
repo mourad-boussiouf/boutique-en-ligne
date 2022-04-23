@@ -8,25 +8,15 @@
     <link rel="stylesheet" href="boutique.css">
 </head>
 <body>
-    <header class="main-head">
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">Nouveautés</a></li>
-                <li><a href="#">T-shirt</a></li>
-                <li><a href="#">A propos</a></li>
-                <li><a href="authentification.php">Authentification</a></li>
-                <li><a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-            </ul>
-            <input type="search" placeholder="Rechercher">
-        </nav>
-    </header>
+   <?php
+   require('header.php');
+   ?>
     <main>
         <section>
             <h1 class="big-title"> Les dernières sorties </h1>
             <div class="cards">
                 <div class="card">
-                    <a href="#"><img src="pictures/tshirt1.jpg" alt=""></a>
+                    <a href="art_individuel.php"><img src="pictures/tshirt1.jpg" alt=""></a>
                     <div class="name-art">
                         Welcome to the gouffre
                     </div>
@@ -38,12 +28,24 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#"><img src="pictures/tshirt2.jpg" alt=""></a>
+                    <a href="art_individuel.php"><img src="pictures/tshirt1.jpg" alt=""></a>
                     <div class="name-art">
                         Welcome to the gouffre
                     </div>
                     <div class="desc">
                         T-shirt moulant Welcome to the gouffre
+                    </div>
+                    <div class="price">
+                        10$
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="art_individuel.php"><img src="pictures/t-shirt-bleu.jpg" alt=""></a>
+                    <div class="name-art">
+                        T-shirt bleu basic
+                    </div>
+                    <div class="desc">
+                        T-shirt moulant bleu 
                     </div>
                     <div class="price">
                         10$
@@ -61,7 +63,9 @@
         </section>
     </main>
     <footer>
-        <table></table>
+        <?php
+        require('footer.php');
+        ?>
     </footer>
 </body>
 </html>

@@ -44,11 +44,12 @@ section .big-title {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 .cards .card img {
     width: 300px;
-    height: 300px;
+    height: 250px;
 }
 
 section .new {
@@ -69,14 +70,15 @@ section .new a {
 
 .main2 .n1 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 10%;
 }
 
 .main2 .n1 div {
     background-color: black;
-    width: 350px;
+    width: 500px;
     height: 200px;
+    box-shadow: 10px 10px 10px ;
 }
 
 .main2 .n1 div p {
@@ -202,4 +204,36 @@ footer td {
     font-size: 20px;
     margin-right: 10px;
     float: right;
+}
+
+/*CARTES SHOPPING*/
+.MAIN1 {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cartes .carte {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.cartes .carte img {
+    width: 350px;
+}
+
+.cartes .carte .carte-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartes .carte .carte-body p {
+    margin-top: -10px;
 }

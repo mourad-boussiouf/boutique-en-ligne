@@ -2,7 +2,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">Nouveautés</a></li>
+                <li><a href="nouveautés.php">Nouveautés</a></li>
                 <li><a href="#">T-shirt</a></li>
                 <li><a href="#">A propos</a></li>
                 <li><a href="authentification.php">Authentification</a></li>
