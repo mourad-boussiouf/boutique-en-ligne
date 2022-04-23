@@ -1,5 +1,38 @@
+
+
+.productscontainer {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+  border-style: solid;
+  border: dashed limegreen; 
+}
+
 .boxeachproduct img {
-    width: 15.5%;
+    width: 55%;
     height: auto;
   }
+
+.boxlisteproduit{
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-style: solid;
+  border: dashed red; 
+  width: 90%;
+
+}
+
+.boxeachproduct {
+
+text-align: center;
+border-style: solid;
+border: dashed rgb(25, 0, 255);
+width: 30%;
+min-width: 250px;
+
+}
 

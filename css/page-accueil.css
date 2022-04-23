@@ -25,14 +25,14 @@ img {
 .menu label {
   cursor: pointer;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background: #ccc;
   border-radius: 50px;
   margin: 0 0.2em 1em;
 }
 .menu label:hover,.menu label:focus {
-  background: #1c87c9;
+  background: #c91c1c;
 }
 .slide-input{
   opacity: 0;
@@ -47,7 +47,11 @@ img {
   transition: left 0s 0.75s;
 }
 [id^="slide"]:checked + .slide-img {
-  left: 0;
+  left: -23px;
   z-index: 100;
   transition: left 0.65s ease-out;
+}
+
+.accueilpage {
+margin-left:15%;
 }

@@ -29,7 +29,7 @@
     <?php endif;?>
 
 </div>
-
+<div class = accueilpage>
 <h1>Bienvenue sur les gouffrés.max</h1>
 
 
@@ -47,7 +47,6 @@
           </div>
   
     <h2>Nos produits phares</h2>
-  
 
     <div class="slider-container">
       <div class="menu">
@@ -65,7 +64,9 @@
       <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
       <img class="slide-img" src="<?= path ?>assets/images/tshirt3.jpg">
 
-    </div>
+    </div> 
 
+
+</div>
 
 </html>
