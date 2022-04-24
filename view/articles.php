@@ -60,10 +60,47 @@
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 
 
- <?php var_dump($produit); ?>
-                            
+ <?php var_dump($produit);
 
-                             
+echo $produit[0]["descr"];
+?>
+                            
+ <h1 id="title"> Image Gallery </h1>
+  <div id="mygallery">
+    <ul id="fullimage">
+
+      <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
+    
+        <li id="koala"> <img src="https://c2.staticflickr.com/6/5514/11051555136_7c0e9560f5_b.jpg">
+          <p>
+            <div class="tooltip"><span> Koala </span></div>
+          </p>
+          <li id="lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304">
+            <div class="tooltip">
+              <p> <span> Lighthouse </span></div>
+            </p>
+            <li id="penguins"> <img src="http://static.ddmcdn.com/gif/penguin-slideshow-141121-78754162.jpg">
+              <p>
+                <div class="tooltip"> <span> Penguins </span></div>
+              </p>
+    </ul>
+    <ul id="thumbimage">
+      <li>
+        <a href="#desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
+      </li>
+      <li>
+        <a href="#koala"> <img src="https://c2.staticflickr.com/6/5514/11051555136_7c0e9560f5_b.jpg"> </a>
+      </li>
+      <li>
+        <a href="#lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304"> </a>
+      </li>
+      <li>
+        <a href="#penguins"> <img src="http://static.ddmcdn.com/gif/penguin-slideshow-141121-78754162.jpg"> </a>
+      </li>
+    </ul>
+    <br style="clear:both;"/>
+  </div>
+                    
 
 <a href="<?=path?>articles">Retours page articles</a>
 

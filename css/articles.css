@@ -89,3 +89,175 @@ font-size: 20px;
 #filterbutton {
 margin-left: 20px;
 }
+
+
+@-webkit-keyframes slideImage{
+  0%:{left:-700px;}
+  100%{left:0px;}
+ }
+ 
+  @-moz-keyframes slideImage{
+  0%{left:-700px;}
+  100%{left:0px;}     
+ }
+ 
+ 
+ 
+ @-moz-keyframes slidein {
+             from {
+                margin-left:700px;
+                
+             }
+             100% {
+                
+                margin-left:25%;
+                
+             }
+             to {
+                margin-left:0px;
+                
+             }
+          }
+          @-webkit-keyframes slidein {
+             from {
+                margin-left:700px;
+                
+             }
+             100% {
+                
+                margin-left:25%;
+                
+             }
+             to {
+                margin-left:0px;
+                
+             }
+          }
+ 
+ 
+ #title {
+   font-family: Agency FB;
+   text-align: center;
+   text-shadow: 2px 2px gray;
+ }
+ 
+ #mygallery {
+   width: 500px; 
+   padding: 20px; 
+   background-color: rgb(255, 255, 255);
+   margin: 0 auto;  
+   
+ }
+ 
+ 
+ #fullimage {
+   list-style: none; 
+   width: 900px; 
+   height: 400px; 
+   margin: 0px; 
+   padding: 0px;
+   overflow: hidden; /* This line is required to make sure that we hide the images below it. Many of you have defined it as auto, which is wrong in this case.*/
+   -moz-animation-duration: 1.5s;
+             -webkit-animation-duration: 1.5s;
+             -moz-animation-name: slidein;
+             -webkit-animation-name: slidein;
+   
+   
+ }
+ 
+ 
+ #fullimage li img {
+   width: 400px;
+   height: 400px; 
+   
+ }
+ 
+ /* Thumb image styles */
+ 
+ #thumbimage {
+   list-style: none;
+   overflow: hidden;
+   float: right;
+   
+ }
+ 
+ #thumbimage li {
+   float: left;    
+ }
+ 
+ #thumbimage li img {
+   /* 
+       Many of you had give the value as Absolute.
+       It should be relative for this as we need to postion the element relative to its normal position and not its ancestor element (absolute) 
+   */
+   position:relative; 
+   width: 50px;
+   float: right;
+   margin-left: 5px;
+   border: 1px solid white;
+   opacity: 0.5;
+   width: 50px; 
+   height: 50px;
+   
+ }
+ 
+ #thumbimage li img:hover {
+   opacity: 1; /* This is the property required for transparency. It takes values between 0 and 1. */
+ 
+ 
+ }
+ 
+ /* 
+     I have defined a class tooltip in the html. This is used to style the text that overlays on the image 
+ */
+ 
+ .tooltip {
+   background: rgba(0,0,0,0.7);
+   width: 300px;
+   height: -250px;
+   position: relative;
+   bottom: 90px; /* This property pushes the text from the bottom of the container to on top of the image.*/
+   left: 0px;
+ }
+ 
+ /* 
+     This styles the text within the tooltip class.
+ */
+ .tooltip span {
+   color: #fff;
+   font-size: 24px;
+   font-weight: 300;
+   line-height: 60px;
+   padding: 0 0 0 10px;
+ }
+ 
+
+ #koala:target {
+   
+   -moz-animation-duration: 1.5s;
+             -webkit-animation-duration: 1.5s;
+             -moz-animation-name: slidein;
+             -webkit-animation-name: slidein;
+ }
+ #penguins:target {
+   
+   -moz-animation-duration: 1.5s;
+             -webkit-animation-duration: 1.5s;
+             -moz-animation-name: slidein;
+             -webkit-animation-name: slidein;
+ }
+ #desert:target {
+   
+   -moz-animation-duration: 1.5s;
+             -webkit-animation-duration: 1.5s;
+             -moz-animation-name: slidein;
+             -webkit-animation-name: slidein;
+ }
+ #lighthouse:target {
+   
+   -moz-animation-duration: 1.5s;
+             -webkit-animation-duration: 1.5s;
+             -moz-animation-name: slidein;
+             -webkit-animation-name: slidein;
+ }
+ 

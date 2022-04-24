@@ -40,7 +40,7 @@ $pageask = explode('/', $_GET['p']);
         <li class="articles"><a href="<?= path ?>articles">Vêtements</a></li>
         <li class="contact"><a href="#">À propos</a></li>
         <?php if (!isset($_SESSION['id'])): ?>
-        <li class="auth"><a href="<?= path ?>authentification">co/ins</a></li>
+        <li class="auth"><a href="<?= path ?>authentification">Je me gouffre</a></li>
         <?php endif; ?>
         <?php if(isset($_SESSION['id'])):?>
         <li class="mesinfos"><a href="<?= path ?>mesinfos">Mes informations</a></li>
@@ -54,7 +54,7 @@ $pageask = explode('/', $_GET['p']);
     <div class ="searchbar">
         <input type="search" placeholder="SEARCH">
     </div>
-    
+
     <div class = banner> <img src="<?= path ?>assets/images/banner.png" alt=""> </div>
 </header>
    
