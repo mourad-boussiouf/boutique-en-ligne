@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+
 
 <?php
 $pageask = explode('/', $_GET['p']);
 ?>
 
 
-
-
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8"/>
+    <html lang="FR">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?= path ?>css/<?php if ($pageask[0]!="") {

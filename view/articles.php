@@ -64,17 +64,15 @@
 
 echo $produit[0]["descr"];
 ?>
-                            
- <h1 id="title"> Image Gallery </h1>
-  <div id="mygallery">
+    <div id="mygallery">                          
+ <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
+
     <ul id="fullimage">
 
       <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
     
-        <li id="koala"> <img src="https://c2.staticflickr.com/6/5514/11051555136_7c0e9560f5_b.jpg">
-          <p>
-            <div class="tooltip"><span> Koala </span></div>
-          </p>
+        <li id="koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>">
+     
           <li id="lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304">
             <div class="tooltip">
               <p> <span> Lighthouse </span></div>
@@ -89,7 +87,7 @@ echo $produit[0]["descr"];
         <a href="#desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
       </li>
       <li>
-        <a href="#koala"> <img src="https://c2.staticflickr.com/6/5514/11051555136_7c0e9560f5_b.jpg"> </a>
+        <a href="#koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>"> </a>
       </li>
       <li>
         <a href="#lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304"> </a>
