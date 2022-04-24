@@ -54,11 +54,17 @@
 </div>
 <?php endif; ?>
 
+
+
         <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
-<p>caca</p>
 
 
+ <?php var_dump($produit); ?>
+                            
+
+                             
 
 <a href="<?=path?>articles">Retours page articles</a>
+
 <?php endif; ?>

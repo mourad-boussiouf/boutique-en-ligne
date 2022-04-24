@@ -31,6 +31,7 @@ $pageask = explode('/', $_GET['p']);
 <body>
 <!-- header -->
 <header> 
+    <div class = logo> <img src="<?= path ?>assets/images/Logo.png" alt=""> </div>
     <div class="nav">
 
       <ul>

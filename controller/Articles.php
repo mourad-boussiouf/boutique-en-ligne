@@ -18,27 +18,31 @@ class Articles extends Controller
         $scategorie = $modelsc->getALL();
         $search = "";
         $totalArticles = $model->nombreTotalArticles();
-        $nombreArticlePages = 20;
+        $nombreArticlePages = 18;
         $nombreDePages = ceil($totalArticles[0] / $nombreArticlePages);
+        $pages = 18;
+        $premierArticle = ($pages - 1) * $nombreArticlePages;
+        $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
         
 
 
             if (isset($pageask[1]) && is_numeric($pageask[1])) {
+                $article = new Articlesmodel();
+                $produit = $article->getOne('id', $pageask[1]);
+              
+                self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod','produit'));
 
-                $pages = $pageask[1];
-                $premierArticle = ($pages - 1) * $nombreArticlePages;
-                $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
-                
             } elseif (isset($pageask[2]) && is_numeric($pageask[2])) {
                 $pages = $pageask[2];
                 $premierArticle = ($pages - 1) * $nombreArticlePages;
 
                 $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
-
+                self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod'));
             } else {
                 $pages = 1;
                 $premierArticle = ($pages - 1) * $nombreArticlePages;
                 $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
+                self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod'));
             }
     
         self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod'));

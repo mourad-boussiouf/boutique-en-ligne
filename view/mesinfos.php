@@ -20,6 +20,6 @@
 <input type="submit" name="mesinfosmodify" value ="Modifier">
 </form>
 
-<a href="<?=path?>adminuser">Annuler la modification</a>
+<a href="<?=path?>accueil">Annuler la modification</a>
 
 <?php endif; ?>

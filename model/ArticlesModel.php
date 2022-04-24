@@ -35,6 +35,12 @@ class ArticlesModel extends Model
 
     }
 
+    public function selectArticle($id) // selectionne en bdd un produit selon son id en argument et genère un tableau contenant ses informations
+    {
+        $sth = $this->_connexion->prepare('SELECT FROM products WHERE id=?');
+        $sth->execute(array($id));
+    }
+
 
     public function addArticle($nom, $prix, $image, $image2, $descr, $cat, $sousCat) // insert un produit en bdd selon arguments
     {
