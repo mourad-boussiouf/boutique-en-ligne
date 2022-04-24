@@ -187,7 +187,11 @@ margin-left: 20px;
  }
  
  #mygallery {
+   display: flex;
+   flex-wrap: wrap;
+   width: 40%;
   padding-left: 500px;
+  border-style: solid;
  }
 
  

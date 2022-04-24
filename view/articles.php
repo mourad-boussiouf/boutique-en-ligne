@@ -62,11 +62,11 @@
 
  <?php var_dump($produit);
 
-echo $produit[0]["descr"];
 ?>
     <div id="mygallery">                          
  <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
-
+<p id = description> <?= $produit[0]['descr'] ?> </p>
+<p id = price> <?= $produit[0]['price'] ?> € </p>
     <ul id="fullimage">
 
       <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
