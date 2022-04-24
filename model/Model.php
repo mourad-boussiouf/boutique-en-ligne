@@ -21,7 +21,8 @@ class Model
         if ($this->_connexion === null) {
             try {
                 $this->_connexion = new PDO('mysql: host=' . $this->host . ';
-            dbname=' . $this->db_name, $this->login, $this->password);
+            dbname=' . $this->db_name, $this->login, $this->password , array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
+        
             } catch (PDOException $exception) {
                 echo 'Erreur :' . $exception->getMessage();
             }
