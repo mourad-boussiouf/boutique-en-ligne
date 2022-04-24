@@ -55,6 +55,7 @@ $pageask = explode('/', $_GET['p']);
         <input type="search" placeholder="SEARCH">
     </div>
     
+    <div class = banner> <img src="<?= path ?>assets/images/banner.png" alt=""> </div>
 </header>
    
 <!-- DISPLAY DU VIEW -->
