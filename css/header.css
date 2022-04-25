@@ -134,7 +134,8 @@ background-color: black;
       display: flex;
       justify-content: center;
       align-content: center;
-      padding: 7vh;
+      padding: 1vh;
+      padding-top: 20px;
       }
 
       .searchbar input {

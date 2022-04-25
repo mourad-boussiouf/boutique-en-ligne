@@ -58,36 +58,51 @@
 
         <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
+<div class = productindi>
 
-    <div id="mygallery">                          
- <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
-    <ul id="fullimage">
+<div class = productinfo>       
+        <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
+        <p id = description> <i>Description :</i> <?= $produit[0]['descr'] ?> </p>
+        <p id = price> <?= $produit[0]['price'] ?> € </p>
+        <form class = addbasket>
+        <span id = selectbloc ><select name="sizechosen" id = "selectidsize">
+                
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>XXXL</option>
+                <option>Le mcdo des caillols</option>
+            
+                </select></span>
+        <input type="submit" name="addbasket" value ="Ajouter au panier">
+        </form>
 
-      <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
-    
-        <li id="koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>">
-     
-          <li id="lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304">
-            <div class="tooltip">
-              <p> <span> Lighthouse </span></div>
-            </p>
-            <li id="penguins"> <img src="http://static.ddmcdn.com/gif/penguin-slideshow-141121-78754162.jpg">
-              <p>
-                <div class="tooltip"> <span> Penguins </span></div>
-              </p>
-    </ul>
-    <ul id="thumbimage">
-      <li>
-        <a href="#desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
-      </li>
-      <li>
-        <a href="#koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>"> </a>
-      </li>
-    </ul>
-    <p id = description> <?= $produit[0]['descr'] ?> </p>
-<p id = price> <?= $produit[0]['price'] ?> € </p>
-  </div>
+</div>
 
+<div class = productpictures>
+        <div id="mygallery">                          
+
+        <ul id="fullimage">
+
+        <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
+        
+                <li id="koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>">        
+        </ul>
+        <ul id="thumbimage">
+        <li>
+                <a href="#desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
+        </li>
+        <li>
+                <a href="#koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>"> </a>
+        </li>
+        </ul>
+        </div>
+</div>
+
+</div>
                     
 
 <a href="<?=path?>articles">Retours page articles</a>
