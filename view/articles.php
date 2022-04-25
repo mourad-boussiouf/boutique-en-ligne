@@ -59,14 +59,8 @@
         <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 
-
- <?php var_dump($produit);
-
-?>
     <div id="mygallery">                          
  <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
-<p id = description> <?= $produit[0]['descr'] ?> </p>
-<p id = price> <?= $produit[0]['price'] ?> € </p>
     <ul id="fullimage">
 
       <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
@@ -89,15 +83,11 @@
       <li>
         <a href="#koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>"> </a>
       </li>
-      <li>
-        <a href="#lighthouse"> <img src="http://vignette2.wikia.nocookie.net/survivorsdogs/images/4/4f/Lighthouse.jpg/revision/latest?cb=20140730131304"> </a>
-      </li>
-      <li>
-        <a href="#penguins"> <img src="http://static.ddmcdn.com/gif/penguin-slideshow-141121-78754162.jpg"> </a>
-      </li>
     </ul>
-    <br style="clear:both;"/>
+    <p id = description> <?= $produit[0]['descr'] ?> </p>
+<p id = price> <?= $produit[0]['price'] ?> € </p>
   </div>
+
                     
 
 <a href="<?=path?>articles">Retours page articles</a>
