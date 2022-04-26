@@ -26,23 +26,24 @@ class Articles extends Controller
         
 
 
-            if (isset($pageask[1]) && is_numeric($pageask[1])) {
+            if (isset($pageask[1])) {
                 $article = new Articlesmodel();
                 $produit = $article->getOne('id', $pageask[1]);
 
-                if (isset($_SESSION['panier']) && isset($_POST['addbasket'])) {
+                if (isset($_GET['addbasket'])) {
                     
 
                     $positionProduit = array_search($produit[0]['name'],  $_SESSION['panier']['articleName']);
+                    echo $positionProduit;
                     
                     if ($positionProduit !== false)
                     {
                        $_SESSION['panier']['articleQuantity'][$positionProduit] += 1;
                     }elseif ($positionProduit == false) {
-                        array_push( $_SESSION['panier']['articleName'],$produit[0]['name']);
-                        array_push( $_SESSION['panier']['articleQuantity'],1);
-                        array_push( $_SESSION['panier']['articlePrice'],$produit[0]['price']);
-                        array_push( $_SESSION['panier']['articlePrice'],$produit[0]['price']);
+                        array_push($_SESSION['panier']['articleName'],$produit[0]['name']);
+                        array_push($_SESSION['panier']['articleQuantity'],1);
+                        array_push($_SESSION['panier']['articlePrice'],$produit[0]['price']);
+                        array_push($_SESSION['panier']['articlePrice'],$produit[0]['price']);
                     }
                     
                 }

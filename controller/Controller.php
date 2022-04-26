@@ -27,11 +27,7 @@ class Controller
 
     public static function disconnect($id)
     {
-        unset($_SESSION['id']);
-        unset($_SESSION['email']);
-        unset($_SESSION['droit']);
-        unset($_SESSION['nom']);
-        unset($_SESSION['prenom']);
+        session_destroy();
         header('Refresh:0;url=' . path . 'accueil');
     }
 
