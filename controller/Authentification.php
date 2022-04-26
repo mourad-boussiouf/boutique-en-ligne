@@ -41,6 +41,14 @@ class Authentification extends Controller
                     $_SESSION['droit'] =$user[0]['id_droit'];
                     $_SESSION['prenom'] = $user[0]['prenom'];
                     $_SESSION['nom'] = $user[0]['nom'];
+                    if (!isset($_SESSION['panier'])){
+                        $_SESSION['panier']=array();
+                        $_SESSION['panier']['articleName'] = array();
+                        $_SESSION['panier']['articleQuantity'] = array();
+                        $_SESSION['panier']['articlePrice'] = array();
+                        $_SESSION['panier']['articleSizeChosen'] = array();
+                        $_SESSION['panier']['verrou'] = false;
+                     }
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user2[0]['prenom']."</div>";
                 } 
