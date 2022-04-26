@@ -59,7 +59,10 @@
         <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 <div class = productindi>
-<?php var_dump($produit[0]) ?>
+<?php
+var_dump($produit[0]);
+var_dump($_SESSION['panier']); 
+?>
 <div class = productinfo>       
         <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
         <p id = description> <i>Description :</i> <?= $produit[0]['descr'] ?> </p>

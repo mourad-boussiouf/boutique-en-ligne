@@ -42,7 +42,7 @@ class Authentification extends Controller
                     $_SESSION['prenom'] = $user[0]['prenom'];
                     $_SESSION['nom'] = $user[0]['nom'];
                     if (!isset($_SESSION['panier'])){
-                        $_SESSION['panier']=array();
+                        $_SESSION['panier'] = array();
                         $_SESSION['panier']['articleName'] = array();
                         $_SESSION['panier']['articleQuantity'] = array();
                         $_SESSION['panier']['articlePrice'] = array();
