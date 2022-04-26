@@ -94,9 +94,9 @@ class Admin extends Controller
 
 
     
-        self::renderPanelAdmin('adminuser', compact('selectedUser','userlist'));
+        self::renderPanelAdmin('adminuser',  compact('selectedUser','userlist'));
         }
-        self::renderPanelAdmin('adminuser', compact('userlist'));
+        self::renderPanelAdmin('adminuser',  compact('userlist'));
     }
 }
 

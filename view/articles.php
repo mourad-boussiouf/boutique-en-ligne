@@ -59,23 +59,25 @@
         <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 <div class = productindi>
-
+<?php var_dump($produit[0]) ?>
 <div class = productinfo>       
         <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
         <p id = description> <i>Description :</i> <?= $produit[0]['descr'] ?> </p>
         <p id = price> <?= $produit[0]['price'] ?> € </p>
         <form class = addbasket>
         <span id = selectbloc ><select name="sizechosen" id = "selectidsize">
-                
-                <option>XS</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-                <option>XXL</option>
-                <option>XXXL</option>
-                <option>Le mcdo des caillols</option>
-            
+        <?php if ($produit[0]['id_categorie'] == '1'): ?>
+                        <option value = xs>XS</option>
+        <?php endif; ?>
+                <option value = s>S</option>
+                <option value = m>M</option>
+                <option value = l>L</option>
+        <?php if ($produit[0]['id_categorie'] == '1'): ?>
+                        <option value = xl>XL</option>
+                        <option value = xxl>XXL</option>
+                        <option value = xxxl>XXXL</option>
+                        <option value = grossophobie>Le mcdo des caillols</option>
+        <?php endif; ?>
                 </select></span>
         <input type="submit" name="addbasket" value ="Ajouter au panier">
         </form>
