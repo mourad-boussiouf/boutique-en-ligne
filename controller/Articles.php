@@ -26,16 +26,17 @@ class Articles extends Controller
         
 
 
-            if (isset($pageask[1]) && is_numeric($pageask[1])) {
+         if (isset($pageask[1]) && is_numeric($pageask[1])) {
                 $article = new Articlesmodel();
                 $produit = $article->getOne('id', $pageask[1]);
 
-                if (isset($_POST['addcart'])) {
-                    echo 'lol';
+                 
+                if (isset($_POST['addcart']) && isset($_SESSION['id'])) {
+                  
                     
                     $articleAndSize = $produit[0]['name'].' '.'dans la taille'.' '.$_POST['sizechosen'];
                     $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['articleName']);
-                    
+
                     if ($positionProduit !== false)
                     {
                        $_SESSION['panier']['articleQuantity'][$positionProduit] += 1;
@@ -50,6 +51,9 @@ class Articles extends Controller
                     
                     }
                     
+                }elseif (isset($_POST['addcart']) && !isset($_SESSION['id'])) {
+                    echo "<div class = error> Vous devez être connecté acheter un article ! </div>";
+                    header('Refresh:2;url='.path.'authentification');
                 }
               
                 self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod','produit'));

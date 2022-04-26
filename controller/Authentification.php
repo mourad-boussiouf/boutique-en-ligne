@@ -30,6 +30,7 @@ class Authentification extends Controller
                     $_SESSION['nom'] = $user[0]['nom'];
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user[0]['prenom']."</div>";
+                    header('Refresh:3;url='.path.'articles');
                 } 
             } 
 
@@ -56,6 +57,7 @@ class Authentification extends Controller
                     
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user2[0]['prenom']."</div>";
+                    header('Refresh:3;url='.path.'articles');
                 } 
 
             }

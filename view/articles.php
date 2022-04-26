@@ -62,7 +62,7 @@
 <div class = productindi>
 <?php
 
-var_dump($_SESSION['panier']);
+
 
 ?>
 <div class = productinfo>       
@@ -89,7 +89,7 @@ var_dump($_SESSION['panier']);
 
 </div>
 
-<div class = productpictures>
+<div class = "productpictures">
         <div id="mygallery">                          
 
         <ul id="fullimage">

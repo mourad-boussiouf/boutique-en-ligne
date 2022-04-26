@@ -1,0 +1,33 @@
+/* Messages d'erreur et de succès du panier */
+
+.errors {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+.success {
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+.reussi {
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+
