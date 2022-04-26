@@ -15,6 +15,11 @@ class Authentification extends Controller
             $user = $usermodel->getOne('email', htmlspecialchars($_POST['email']));
             if (!empty($user)) {
                 if ($user[0]['password'] == password_verify($_POST['password'], $user[0]['password'])) {
+                    $_SESSION['panier'] = array();
+                    $_SESSION['panier']['articleName'] = array();
+                    $_SESSION['panier']['articleQuantity'] = array();
+                    $_SESSION['panier']['articlePrice'] = array();
+                    $_SESSION['panier']['articleSize'] = array();
                     $_SESSION['id'] = $user[0]['id'];
                     $_SESSION['email'] = $user[0]['email'];
                     $_SESSION['nom'] = $user[0]['nom'];
@@ -33,6 +38,11 @@ class Authentification extends Controller
             if (!empty($user2)) {
 
                 if ($user2[0]['password'] == password_verify($_POST['password'], $user2[0]['password'])) {
+                    $_SESSION['panier'] = array();
+                    $_SESSION['panier']['articleName'] = array();
+                    $_SESSION['panier']['articleQuantity'] = array();
+                    $_SESSION['panier']['articlePrice'] = array();
+                    $_SESSION['panier']['articleSize'] = array();
                     $_SESSION['id'] = $user[0]['id'];
                     $_SESSION['email'] = $user[0]['email'];
                     $_SESSION['nom'] = $user[0]['nom'];
@@ -41,14 +51,9 @@ class Authentification extends Controller
                     $_SESSION['droit'] =$user[0]['id_droit'];
                     $_SESSION['prenom'] = $user[0]['prenom'];
                     $_SESSION['nom'] = $user[0]['nom'];
-                    if (!isset($_SESSION['panier'])){
-                        $_SESSION['panier'] = array();
-                        $_SESSION['panier']['articleName'] = array();
-                        $_SESSION['panier']['articleQuantity'] = array();
-                        $_SESSION['panier']['articlePrice'] = array();
-                        $_SESSION['panier']['articleSizeChosen'] = array();
-                        $_SESSION['panier']['verrou'] = false;
-                     }
+
+                    
+                    
                     self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user2[0]['prenom']."</div>";
                 } 

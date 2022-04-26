@@ -26,24 +26,28 @@ class Articles extends Controller
         
 
 
-            if (isset($pageask[1])) {
+            if (isset($pageask[1]) && is_numeric($pageask[1])) {
                 $article = new Articlesmodel();
                 $produit = $article->getOne('id', $pageask[1]);
 
-                if (isset($_GET['addbasket'])) {
+                if (isset($_POST['addcart'])) {
+                    echo 'lol';
                     
-
-                    $positionProduit = array_search($produit[0]['name'],  $_SESSION['panier']['articleName']);
-                    echo $positionProduit;
+                    $articleAndSize = $produit[0]['name'].' '.'dans la taille'.' '.$_POST['sizechosen'];
+                    $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['articleName']);
                     
                     if ($positionProduit !== false)
                     {
                        $_SESSION['panier']['articleQuantity'][$positionProduit] += 1;
-                    }elseif ($positionProduit == false) {
-                        array_push($_SESSION['panier']['articleName'],$produit[0]['name']);
-                        array_push($_SESSION['panier']['articleQuantity'],1);
-                        array_push($_SESSION['panier']['articlePrice'],$produit[0]['price']);
-                        array_push($_SESSION['panier']['articlePrice'],$produit[0]['price']);
+
+                    }elseif($positionProduit == false){
+
+                        array_push( $_SESSION['panier']['articleName'],$articleAndSize);
+                        array_push( $_SESSION['panier']['articlePrice'],$produit[0]['price']);
+                        array_push( $_SESSION['panier']['articleQuantity'],1);
+                        
+
+                    
                     }
                     
                 }

@@ -1,5 +1,6 @@
 
 <?php $pageask = explode('/', $_GET['p']); 
+
 ?>
 
 <?php if (empty($pageask[1])): ?>
@@ -60,14 +61,15 @@
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 <div class = productindi>
 <?php
-var_dump($produit[0]);
-var_dump($_SESSION['panier']); 
+
+var_dump($_SESSION['panier']);
+
 ?>
 <div class = productinfo>       
         <h1 id="title"> <?= $produit[0]['name'] ?> </h1>
         <p id = description> <i>Description :</i> <?= $produit[0]['descr'] ?> </p>
         <p id = price> <?= $produit[0]['price'] ?> € </p>
-        <form class = addbasket>
+        <form action="#" method="POST" class = addcartform>
         <span id = selectbloc ><select name="sizechosen" id = "selectidsize">
         <?php if ($produit[0]['id_categorie'] == '1'): ?>
                         <option value = xs>XS</option>
@@ -82,7 +84,7 @@ var_dump($_SESSION['panier']);
                         <option value = grossophobie>Le mcdo des caillols</option>
         <?php endif; ?>
                 </select></span>
-        <input type="submit" name="addbasket" value ="Ajouter au panier">
+        <input type="submit" name="addcart" value ="Ajouter au panier">
         </form>
 
 </div>
