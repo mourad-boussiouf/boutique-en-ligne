@@ -21,6 +21,14 @@ align-items: center!important;
   padding: 0.5vh;
 }
 
+.cart a {
+font-family: monospace;
+text-decoration: none;
+color: white;
+font-size: 16px;
+padding-top: 10px;
+padding-left: 6px;
+}
 .searchbar input {
   align-items: center!important;
   display: block;

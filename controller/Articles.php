@@ -35,17 +35,24 @@ class Articles extends Controller
                   
                     
                     $articleAndSize = $produit[0]['name'].' '.'dans la taille'.' '.$_POST['sizechosen'];
-                    $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['articleName']);
+                    $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['libelleProduit']);
+
+                    
 
                     if ($positionProduit !== false)
                     {
-                       $_SESSION['panier']['articleQuantity'][$positionProduit] += 1;
+                       $_SESSION['panier']['qteProduit'][$positionProduit] += 1;
+
+                       echo "<div class = success> Un exemplaire supplémentaire de cet article à été ajouté à votre panier.</div>";
+                       header('Refresh:1;url='.path.'articles/'.$pageask[1]);
 
                     }elseif($positionProduit == false){
 
-                        array_push( $_SESSION['panier']['articleName'],$articleAndSize);
-                        array_push( $_SESSION['panier']['articlePrice'],$produit[0]['price']);
-                        array_push( $_SESSION['panier']['articleQuantity'],1);
+                        array_push( $_SESSION['panier']['libelleProduit'],$articleAndSize);
+                        array_push( $_SESSION['panier']['prixProduit'],$produit[0]['price']);
+                        array_push( $_SESSION['panier']['qteProduit'],1);
+                        echo "<div class = success> Cet article a été ajouté à votre panier.</div>";
+                        header('Refresh:2;url='.path.'articles/'.$pageask[1]);
                         
 
                     

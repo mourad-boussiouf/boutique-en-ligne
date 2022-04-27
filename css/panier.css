@@ -30,4 +30,20 @@
 
 }
 
+table {
+    border-style: solid;
+}
+
+.cartresume{
+display: flex;
+}
+
+td {
+display: flex;
+}
+
+form input[type=text] {
+display: hidden;
+  }
+
 

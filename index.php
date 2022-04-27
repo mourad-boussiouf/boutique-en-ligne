@@ -41,6 +41,8 @@ if ($pageask[0] == 'authentification'){
     Admin::articles();
 }elseif ($pageask[0] == 'adminuser') {
     Admin::user();
+}elseif ($pageask[0] == 'panier') {
+    Panier::index();
 }else{
     Accueil::index();
 }

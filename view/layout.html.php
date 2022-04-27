@@ -5,7 +5,6 @@
 $pageask = explode('/', $_GET['p']);
 ?>
 
-
 <head>
     <meta charset="UTF-8"/>
     <html lang="FR">
@@ -30,6 +29,11 @@ $pageask = explode('/', $_GET['p']);
 <body>
 <!-- header -->
 <header> 
+<?php if (isset($_SESSION['panier'])): ?>
+    <?php    $numberArticleInCart = count($_SESSION['panier']['qteProduit']);?>
+    <div class = cart><a href="<?= path ?>panier">PANIER (<?= $numberArticleInCart ?>)</a></div>
+<?php endif; ?>
+
     <div class = logo> <img src="<?= path ?>assets/images/Logo.png" alt=""> </div>
     <div class="nav">
 
