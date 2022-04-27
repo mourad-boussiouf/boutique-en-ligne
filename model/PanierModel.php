@@ -7,6 +7,9 @@ class PanierModel extends Model
       
     }
 
+
+
+    
     public function supprimerArticle($libelleProduit){
         //Si le panier existe
         if (isset($_SESSION['panier']))
@@ -35,7 +38,52 @@ class PanierModel extends Model
         echo "Un problème est survenu veuillez contacter l'administrateur du site.";
      }
 
+
+     public function modifierQTeArticle($libelleProduit,$qteProduit){
+        //Si le panier existe
+        if (isset($_SESSION['panier'])){
+
+           //Si la quantité est positive on modifie sinon on supprime l'article
+           if ($qteProduit == "max")
+           {
+              //Recherche du produit dans le panier
+              $positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
+     
+              if ($positionProduit !== false)
+              {
+                 $_SESSION['panier']['qteProduit'][$positionProduit] + 1 ;
+              }
+           }
+            if ($qteProduit == "creve")
+              {
+                 //Recherche du produit dans le panier
+                 $positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
+        
+                 if ($positionProduit !== false && $_SESSION['panier']['qteProduit'][$positionProduit] != 0)
+                 {
+                    $_SESSION['panier']['qteProduit'][$positionProduit] - 1 ;
+                 }
+           }
+           else{
+           unset($_SESSION['panier']);
+           unset($_SESSION['panier']['qteProduit']);
+           unset($_SESSION['panier']['libelleProduit']);
+           unset($_SESSION['panier']['prixProduit']);
+           unset($_SESSION['panier']['verrou']);
+            }
+        
+        }
+    }
+
 }
+
+
+
+
+    
+        
+
+   
 
 
 ?>

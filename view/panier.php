@@ -11,10 +11,13 @@ var_dump($_SESSION['panier']);
         <tr>
         <td>
         <?=$value ?>
-        <form action="#" method="POST">
+        <form action="" method="POST">
         <input type="text" id="articleValue" name="articleValue" value="<?=$value?>">
-        <input type="submit" name="delArticleCart" value ="Supprimmer">  
+        <input type="submit" name="moinsUn" value ="-1">
+        <input type="submit" name="delArticleCart" value ="Supprimmer">
+        <input type="submit" name="plusUn" value ="+1">
 
+       
         </form></td>
         </tr>
     <?php endforeach; ?>
@@ -37,7 +40,11 @@ var_dump($_SESSION['panier']);
   </tr>
   <?php foreach ($_SESSION['panier']['qteProduit'] as $value): ?>
         <tr>
-        <td> <?= $value ?></td>
+        <td>
+
+          <?= $value ?>
+
+        </td>
         </tr>
     <?php endforeach; ?>
 </table> 

@@ -12,6 +12,7 @@ class Panier extends Controller
         self::render('panier');
         }
 
+        if (isset($_POST))
     self::render('panier');
     }
 
