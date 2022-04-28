@@ -12,11 +12,11 @@ var_dump($_SESSION['panier']);
         <td>
         <?=$value ?>
         <form action="" method="POST">
-        <input type="text" id="articleValue" name="articleValue" value="<?=$value?>">
+        <input type="hidden" id="articleValue" name="articleValue" value="<?=$value?>">
         <input id="articleHidden" name="articleHidden" type="hidden" value="<?=$value?>">
         <input id="add" name="add" type="hidden" value="max">
         <input id="decrease" name="decrease" type="hidden" value="creve">
-        <input type="submit" name="delArticleCart" value ="Supprimmer">
+        <input type="submit" name="delArticleCart" value ="DEL">
 
         <input type="submit" name="AddSubmit" value ="+">
         <input type="submit" name="RemSubmit" value ="-">
@@ -60,7 +60,7 @@ var_dump($_SESSION['panier']);
         <th>Total à payer</th>
     </tr>
     <tr>
-        <td><?= '10'.'€' ?></td>
+        <td><?= $prixTotal.'€' ?></td>
     </tr>
 
 </table>  

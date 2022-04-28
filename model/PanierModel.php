@@ -7,9 +7,7 @@ class PanierModel extends Model
       
     }
 
-
-
-    
+ 
     public function supprimerArticle($libelleProduit){
         //Si le panier existe
         if (isset($_SESSION['panier']))
@@ -74,6 +72,17 @@ class PanierModel extends Model
 
     }
 }
+
+public function MontantGlobal(){
+   $total=0;
+   for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
+   {
+      $total += $_SESSION['panier']['qteProduit'][$i] * $_SESSION['panier']['prixProduit'][$i];
+   }
+   return $total;
+}
+
+
 
 }
 ?>
