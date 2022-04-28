@@ -17,6 +17,7 @@ class Articles extends Controller
         $categorie = $modelcat->getALL();
         $scategorie = $modelsc->getALL();
         $search = "";
+        $searchresult = "";
         $totalArticles = $model->nombreTotalArticles();
         $nombreArticlePages = 18;
         $nombreDePages = ceil($totalArticles[0] / $nombreArticlePages);
@@ -24,7 +25,13 @@ class Articles extends Controller
         $premierArticle = ($pages - 1) * $nombreArticlePages;
         $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
         
+            if (isset($_POST['searchvalue'])) {
+    
+            $searchresult = $model ->searchArticles2($_POST['searchvalue']);
+            self::render('articles', compact('searchresult' ,'categorie','scategorie',  'search', 'nombreDePages', 'prod'));
+            }
 
+        
 
          if (isset($pageask[1]) && is_numeric($pageask[1])) {
                 $article = new Articlesmodel();
@@ -80,6 +87,7 @@ class Articles extends Controller
         self::render('articles', compact('categorie', 'scategorie',  'search', 'nombreDePages', 'prod'));
       
         }
+
 
 
 

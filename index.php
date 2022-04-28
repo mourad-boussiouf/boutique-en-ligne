@@ -26,26 +26,29 @@ define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 $pageask = explode('/', $_GET['p']);
 
 
-if ($pageask[0] == 'authentification'){
-    Authentification::indexcon();
-    Authentification::indexreg(); 
-}elseif ($pageask[0] == 'deconnexion') {
-    Controller::disconnect($_SESSION['id']);
-}elseif ($pageask[0] == 'articles') {
-    Articles::index();
-}elseif ($pageask[0] == 'mesinfos') {
-    Mesinfos::index();
-}elseif ($pageask[0] == 'admin') {
-    Admin::index();
-}elseif ($pageask[0] == 'adminarticles') {
-    Admin::articles();
-}elseif ($pageask[0] == 'adminuser') {
-    Admin::user();
-}elseif ($pageask[0] == 'panier') {
-    Panier::index();
-}else{
-    Accueil::index();
-}
+    if ($pageask[0] == 'authentification'){
+        Authentification::indexcon();
+        Authentification::indexreg(); 
+    }elseif ($pageask[0] == 'deconnexion') {
+        Controller::disconnect($_SESSION['id']);
+    }elseif ($pageask[0] == 'articles') {
+        Articles::index();
+    }
+    elseif ($pageask[0] == 'mesinfos') {
+        Mesinfos::index();
+    }elseif ($pageask[0] == 'admin') {
+        Admin::index();
+    }elseif ($pageask[0] == 'adminarticles') {
+        Admin::articles();
+    }elseif ($pageask[0] == 'adminuser') {
+        Admin::user();
+    }elseif ($pageask[0] == 'panier') {
+        Panier::index();
+    }else{
+        Accueil::index();
+    }
+
+
 
 
 ?>

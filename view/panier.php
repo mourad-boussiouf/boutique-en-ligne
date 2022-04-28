@@ -34,9 +34,9 @@ var_dump($_SESSION['panier']);
   </tr>
   <?php foreach ($_SESSION['panier']['qteProduit'] as $value): ?>
         <tr>
-        <td>
+        <td  id = quantitydisplay>
 
-          <?= $value ?>
+          <?= "*".$value ?>
 
         </td>
         </tr>
@@ -49,22 +49,25 @@ var_dump($_SESSION['panier']);
   </tr>
   <?php foreach ($_SESSION['panier']['prixProduit'] as $value): ?>
         <tr>
-        <td><?=$value ?></td>
+        <td id = pricedisplay><?=$value ?></td>
         </tr>
     <?php endforeach; ?>
 </table> 
 
-<table class = totaltopay> 
+<table id = totaltopay> 
 
     <tr>
         <th>Total à payer</th>
     </tr>
     <tr>
-        <td><?= $prixTotal.'€' ?></td>
+        <td id = "pricetotal"><?= $prixTotal.'€' ?></td>
     </tr>
 
-</table>  
-
-
+</table> 
+<div id = 'paiementbutton'>
+<form action = "" method = 'POST'>
+<input type="submit" id = "pay" name="pay" value ="Payer">
+  </form>
+  </div>  
 
 </div>

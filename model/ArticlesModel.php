@@ -55,4 +55,23 @@ class ArticlesModel extends Model
     }
 
 
+    public function searchArticles1 ($keyword){
+
+        $sth = $this->_connexion->prepare('SELECT * FROM products WHERE name like:term');
+        $sth->execute(["term" => $keyword.'%']);
+        $searchResults = $sth->fetchAll();
+        return $searchResults;
+
+    }
+
+    
+    public function searchArticles2($value) // Requète pour la barre de recherche PEUT ETRE A VENIR
+    {
+        $sth = $this->_connexion->prepare("SELECT * FROM products WHERE name LIKE '%" . $value . "%' LIMIT 6");
+        $sth->execute();
+        $test = $sth->fetchall(PDO::FETCH_ASSOC);
+        return ($test);
+    }
+
+
 }

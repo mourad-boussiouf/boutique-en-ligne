@@ -60,6 +60,7 @@ justify-content: center;
 }
 
 .banner {
+padding-top: 50px;
 display: flex;
 justify-content: center;
 max-width: 100%;

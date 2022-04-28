@@ -3,7 +3,66 @@
 
 ?>
 
-<?php if (empty($pageask[1])): ?>
+
+<?php if (isset($searchresult)): ?>
+
+        <div class = productscontainer>
+
+
+<div class = container>
+    <div class = filters>
+        <h1 class="titre">Resultats de la recherche : </h1>
+        
+        
+        <form action="" method="POST">
+        <div class = selectsfilter>
+                <span>Type :</span>
+                <span><select name="id_cat">
+                <?php foreach ($categorie as $key=>$value ): ?>
+                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+                <?php endforeach;?>
+                </select></span>
+                <span>Collection : </span>
+                <span><select name="id_scat">
+                <?php foreach ($scategorie as $key=>$value ): ?>
+                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+                <?php endforeach;?>
+                </select></span>
+        
+                <span id = filterbutton><input type="submit" name="scat" value="Filtrer"></span>
+        </div>
+        <form action = "" method = "POST">
+        <input type="text" id = "searchvalue" name = "searchvalue" placeholder="SEARCH">
+        <input type="submit" id = "searchsubmit" name = "searchsubmit" placeholder = "Ok">
+        </form>        
+        </div>
+
+            <div class="boxlisteproduit">
+                <?php foreach ($searchresult as $value): ?> <!-- Recherche les produits en bdd -->
+                    
+                        <div class="boxeachproduct">
+                            <a href="<?= path ?>articles/<?= $value['id'] ?>"> <h2><?= $value['name']; ?></h2>
+                             <img src="<?= path ?>assets/images/<?= $value['image'] ?>" alt="">
+                            </a>
+                            <h3><?= $value['price']; ?> €</h3>
+                            <p class="descriptionproduct"><?= $value['descr'] ?></p>
+                            <form action="<?= path ?>articles/<?= $value['id'] ?>" method="post" name="ajouter">
+                            <input type="hidden" name="hidden" value="<?= $value['id'] ?>">
+                            <input type="submit" name="achat" value="Acheter">
+                        </form>
+                        </div>
+    
+                <?php endforeach; ?>
+    </div>
+            </div>
+    
+</div>
+
+<?php endif ?>
+
+
+
+<?php if (empty($pageask[1]) && !isset($searchresult)): ?>
 <div class = productscontainer>
 
 
@@ -30,6 +89,9 @@
         
                 <span id = filterbutton><input type="submit" name="scat" value="Filtrer"></span>
         </div>
+        <form action = "" method = "POST">
+        <input type="text" id = "searchvalue" name = "searchvalue" placeholder="SEARCH">
+        <input type="submit" id = "searchsubmit" name = "searchsubmit" placeholder = "Ok">
         </form>        
         </div>
 
@@ -82,7 +144,7 @@
                         <option value = xxl>XXL</option>
                         <option value = xxxl>XXXL</option>
                         <option value = grossophobie>Le mcdo des caillols</option>
-        <?php endif; ?>
+                        <?php endif; ?>
                 </select></span>
         <input type="submit" name="addcart" value ="Ajouter au panier">
         </form>

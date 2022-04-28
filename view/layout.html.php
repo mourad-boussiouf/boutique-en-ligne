@@ -3,6 +3,7 @@
 
 <?php
 $pageask = explode('/', $_GET['p']);
+
 ?>
 
 <head>
@@ -54,9 +55,8 @@ $pageask = explode('/', $_GET['p']);
         <?php endif;?>
        </ul>
       </div>
-    <div class ="searchbar">
-        <input type="search" placeholder="SEARCH">
-    </div>
+
+
 
     <div class = banner> <img src="<?= path ?>assets/images/banner.png" alt=""> </div>
 </header>
