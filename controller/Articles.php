@@ -26,8 +26,9 @@ class Articles extends Controller
         $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
         
             if (isset($_POST['searchvalue'])) {
-    
-            $searchresult = $model ->searchArticles2($_POST['searchvalue']);
+
+            $motsrecherche = htmlspecialchars(trim($_POST['searchvalue']));
+            $searchresult = $model ->searchArticles2($motsrecherche);
             self::render('articles', compact('searchresult' ,'categorie','scategorie',  'search', 'nombreDePages', 'prod'));
             }
 
