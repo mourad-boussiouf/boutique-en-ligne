@@ -51,39 +51,29 @@ class PanierModel extends Model
      
               if ($positionProduit !== false)
               {
-                 $_SESSION['panier']['qteProduit'][$positionProduit] + 1 ;
+
+                 $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] + 1;
               }
            }
-            if ($qteProduit == "creve")
-              {
-                 //Recherche du produit dans le panier
-                 $positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
-        
-                 if ($positionProduit !== false && $_SESSION['panier']['qteProduit'][$positionProduit] != 0)
-                 {
-                    $_SESSION['panier']['qteProduit'][$positionProduit] - 1 ;
-                 }
-           }
-           else{
-           unset($_SESSION['panier']);
-           unset($_SESSION['panier']['qteProduit']);
-           unset($_SESSION['panier']['libelleProduit']);
-           unset($_SESSION['panier']['prixProduit']);
-           unset($_SESSION['panier']['verrou']);
+              if ($qteProduit == "creve")
+           {
+                //Recherche du produit dans le panier
+                $positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
+       
+                if ($positionProduit !== false)
+                {
+                   $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] - 1;
+                }
+
+            if($_SESSION['panier']['qteProduit'][$positionProduit] <= 0){
+                $this->supprimerArticle($libelleProduit);
             }
         
         }
-    }
+    
 
+    }
 }
 
-
-
-
-    
-        
-
-   
-
-
+}
 ?>

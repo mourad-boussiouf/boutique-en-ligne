@@ -13,9 +13,14 @@ var_dump($_SESSION['panier']);
         <?=$value ?>
         <form action="" method="POST">
         <input type="text" id="articleValue" name="articleValue" value="<?=$value?>">
-        <input type="submit" name="moinsUn" value ="-1">
+        <input id="articleHidden" name="articleHidden" type="hidden" value="<?=$value?>">
+        <input id="add" name="add" type="hidden" value="max">
+        <input id="decrease" name="decrease" type="hidden" value="creve">
         <input type="submit" name="delArticleCart" value ="Supprimmer">
-        <input type="submit" name="plusUn" value ="+1">
+
+        <input type="submit" name="AddSubmit" value ="+">
+        <input type="submit" name="RemSubmit" value ="-">
+        
 
        
         </form></td>

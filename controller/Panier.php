@@ -2,17 +2,29 @@
 class Panier extends Controller 
 {
 
+    
+
     public static function index(){
+        if (isset($_POST['articleValue']))
+        $libelleProduit = $_POST['articleValue'];
 
         if (isset($_POST['delArticleCart']))
         {
-        $libelleProduit = $_POST['articleValue'];
         $enlevearticlelol = new PanierModel();   
         $enlevestp = $enlevearticlelol->supprimerArticle($libelleProduit);
-        self::render('panier');
         }
-
-        if (isset($_POST))
+       
+        if (isset($_POST['AddSubmit'])){
+        $maxoucreve = $_POST['add'];
+        $ajouterquant = new PanierModel();
+        $decremquant = $ajouterquant->modifierQTeArticle($libelleProduit,$maxoucreve);   
+        }
+        
+        if (isset($_POST['RemSubmit'])){
+        $maxoucreve = $_POST['decrease'];
+        $soustrairequant = new PanierModel();
+        $moinsquant = $soustrairequant->modifierQTeArticle($libelleProduit,$maxoucreve);;
+        }
     self::render('panier');
     }
 
