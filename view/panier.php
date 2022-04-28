@@ -28,20 +28,9 @@ var_dump($_SESSION['panier']);
     <?php endforeach; ?>
 </table> 
 
-<table class = tablecartprice>
-  <tr>
-  <th>Prix de l'article</th>
-  </tr>
-  <?php foreach ($_SESSION['panier']['prixProduit'] as $value): ?>
-        <tr>
-        <td><?=$value ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table> 
-
 <table class = tablecartquantity>
   <tr>
-  <th>Quantitée demandée</th>
+  <th>Quantité</th>
   </tr>
   <?php foreach ($_SESSION['panier']['qteProduit'] as $value): ?>
         <tr>
@@ -54,6 +43,16 @@ var_dump($_SESSION['panier']);
     <?php endforeach; ?>
 </table> 
 
+<table class = tablecartprice>
+  <tr>
+  <th>Prix de l'article</th>
+  </tr>
+  <?php foreach ($_SESSION['panier']['prixProduit'] as $value): ?>
+        <tr>
+        <td><?=$value ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table> 
 
 <table class = totaltopay> 
 

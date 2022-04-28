@@ -52,7 +52,7 @@ class PanierModel extends Model
               if ($positionProduit !== false)
               {
 
-                 $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] + 1;
+                 $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] + 1; //incrémente si le bouton + est pressé
               }
            }
               if ($qteProduit == "creve")
@@ -62,11 +62,11 @@ class PanierModel extends Model
        
                 if ($positionProduit !== false)
                 {
-                   $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] - 1;
+                   $_SESSION['panier']['qteProduit'][$positionProduit] = $_SESSION['panier']['qteProduit'][$positionProduit] - 1; //decrémente si le bouton - est pressé
                 }
 
             if($_SESSION['panier']['qteProduit'][$positionProduit] <= 0){
-                $this->supprimerArticle($libelleProduit);
+                $this->supprimerArticle($libelleProduit); //supprimme le produit si jamais la quantité vaut 0
             }
         
         }
