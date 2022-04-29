@@ -2,7 +2,7 @@
 <!-- Si connexion ok redirection sur la page d'accueil -->
 <div class="success"><?= $success[0]; ?></:>
 </div>
-<?php header('Refresh:3,' . path . 'accueil');?>
+<?php header('Refresh:3,' . 'path' . 'accueil');?>
 <?php endif; ?>
 
 <?php if (!empty($errors)): ?>
