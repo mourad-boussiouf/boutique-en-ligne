@@ -27,6 +27,8 @@ class Panier extends Controller
         $moinsquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);;
        
         }
+
+        
         
         $prixTotal = $model->MontantGlobal();
 
