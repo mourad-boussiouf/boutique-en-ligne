@@ -46,7 +46,7 @@
                             </a>
                             <h3><?= $value['price']; ?> €</h3>
                             <p class="descriptionproduct"><?= $value['descr'] ?></p>
-                            <form action="<?= path ?>articles/<?= $value['id'] ?>" method="post" name="ajouter">
+                            <form id = "alladd" action="<?= path ?>articles/<?= $value['id'] ?>" method="post" name="ajouter">
                             <input type="hidden" name="hidden" value="<?= $value['id'] ?>">
                             <input type="submit" name="achat" value="Acheter">
                         </form>
@@ -146,7 +146,7 @@
                         <option value = grossophobie>Le mcdo des caillols</option>
                         <?php endif; ?>
                 </select></span>
-        <input type="submit" name="addcart" value ="Ajouter au panier">
+        <input id = "indiadd" type="submit" name="addcart" value ="Ajouter au panier">
         </form>
 
 </div>
