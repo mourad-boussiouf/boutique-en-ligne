@@ -25,6 +25,7 @@ class Articles extends Controller
         $premierArticle = ($pages - 1) * $nombreArticlePages;
         $prod = $model->getArticlesFormProducts($premierArticle, $nombreArticlePages);
         
+        
             if (isset($_POST['searchvalue'])) {
 
             $motsrecherche = htmlspecialchars(trim($_POST['searchvalue']));
@@ -42,7 +43,7 @@ class Articles extends Controller
                 if (isset($_POST['addcart']) && isset($_SESSION['id'])) {
                   
                     
-                    $articleAndSize = $produit[0]['name'].' '.'dans la taille'.' '.$_POST['sizechosen'];
+                    $articleAndSize = $produit[0]['name'].' dans la taille'.' '.$_POST['sizechosen']; // caractere space pour le futur explode :' '
                     $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['libelleProduit']);
 
                     
@@ -50,7 +51,7 @@ class Articles extends Controller
                     if ($positionProduit !== false)
                     {
                        $_SESSION['panier']['qteProduit'][$positionProduit] += 1;
-
+                        
                        echo "<div class = success> Un exemplaire supplémentaire de cet article à été ajouté à votre panier.</div>";
                        header('Refresh:1;url='.path.'articles/'.$pageask[1]);
 

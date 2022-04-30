@@ -44,6 +44,8 @@ $pageask = explode('/', $_GET['p']);
         Admin::user();
     }elseif ($pageask[0] == 'panier') {
         Panier::index();
+    }elseif ($pageask[0] == 'paiement') {
+        Paiement::index();
     }else{
         Accueil::index();
     }

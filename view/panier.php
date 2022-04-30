@@ -1,11 +1,15 @@
-<?php 
+ <?php 
 var_dump($_SESSION['panier']);
-?>
+
+
+?> 
+
+
 <div class = cartresume>
 
 <table class = tablecartname>
   <tr>
-  <th>Nom de l'article</th>
+  <th>Nom de l'article <div class="dots-bars-1"></div></th>
   </tr>
     <?php foreach ($_SESSION['panier']['libelleProduit'] as $value): ?>
         <tr>
