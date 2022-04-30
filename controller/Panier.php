@@ -39,7 +39,8 @@ class Panier extends Controller
 
             for ($i=0; $i < count($_SESSION['panier']['libelleProduit'])  ; $i++) { 
             
-                $_SESSION['orderline'] .=" •".$_SESSION['panier']['libelleProduit'][$i].", qté : ".$_SESSION['panier']['qteProduit'][$i].", prix : ".$_SESSION['panier']['prixProduit'][$i]."€.  "; 
+                $_SESSION['orderline'] .=" •".$_SESSION['panier']['libelleProduit'][$i].
+                ", qté : ".$_SESSION['panier']['qteProduit'][$i].", prix : ".$_SESSION['panier']['prixProduit'][$i]."€.  "; 
                         
             }
 

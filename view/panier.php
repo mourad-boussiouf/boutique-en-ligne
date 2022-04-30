@@ -9,7 +9,7 @@ var_dump($_SESSION['panier']);
 
 <table class = tablecartname>
   <tr>
-  <th>Nom de l'article <div class="dots-bars-1"></div></th>
+  <th>Nom de l'article</th>
   </tr>
     <?php foreach ($_SESSION['panier']['libelleProduit'] as $value): ?>
         <tr>
