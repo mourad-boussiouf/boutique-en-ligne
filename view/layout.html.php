@@ -67,7 +67,7 @@ $pageask = explode('/', $_GET['p']);
         <?= $content ?>
     
 </main>
-</footer>-->
+</footer>
       <footer>
           <div class="para">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
