@@ -46,8 +46,6 @@ class Articles extends Controller
                     $articleAndSize = $produit[0]['name'].' dans la taille'.' '.$_POST['sizechosen']; // caractere space pour le futur explode :' '
                     $positionProduit = array_search($articleAndSize,  $_SESSION['panier']['libelleProduit']);
 
-                    
-
                     if ($positionProduit !== false)
                     {
                        $_SESSION['panier']['qteProduit'][$positionProduit] += 1;
