@@ -6,9 +6,10 @@ class Paiement extends Controller
         $model = new PanierModel();
         $prixTotal = $model->MontantGlobal();
         
-        
+        $recap = explode("•", $_SESSION['orderline']);  
+        array_shift($recap);
 
-        self::render('paiement', compact('prixTotal'));
+        self::render('paiement', compact('prixTotal','recap'));
     }
 
 }

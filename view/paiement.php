@@ -1,5 +1,9 @@
 
 
 <?php
-echo $_SESSION['orderline'];
+          
+var_dump($recap);
+
+
+
 ?>

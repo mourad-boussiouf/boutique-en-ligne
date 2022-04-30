@@ -3,6 +3,11 @@ class Panier extends Controller
 {
 
     public static function index(){
+
+        if(count($_SESSION['panier']['libelleProduit']) <= 0) {
+        echo "<div class = error> Aucun produits selectionnés.</div>";
+        header('Refresh:0;url='.path.'articles');
+        }
         
         $model = new PanierModel();   
         $prixTotal = $model->MontantGlobal();
@@ -30,19 +35,16 @@ class Panier extends Controller
 
         if (isset($_POST['pay'])) {
 
+            $_SESSION['orderline'] = "";
+
+            for ($i=0; $i < count($_SESSION['panier']['libelleProduit'])  ; $i++) { 
             
-        if(isset($_SESSION['orderline'])){$_SESSION['orderline'] = "";}
-        
-
-        foreach ($_SESSION['panier']['libelleProduit'] as $v1){  // triple forearch pour faire une seule string contenant toutes les données d'une commande appelée 'orderline'
-            foreach ($_SESSION['panier']['qteProduit'] as $v2){
-                foreach ($_SESSION['panier']['prixProduit'] as $v3){
-
-                    $_SESSION['orderline'] .= $v1.",".$v2.",".$v3."<br>";
-                }  
+                $_SESSION['orderline'] .=" •".$_SESSION['panier']['libelleProduit'][$i].", qté : ".$_SESSION['panier']['qteProduit'][$i].", prix : ".$_SESSION['panier']['prixProduit'][$i]."€.  "; 
+                        
             }
-        }
-              
+
+         
+                           
         echo '<div class = reussi> Votre commande est confirmée. Vous allez être rediriger vers la page de paiement.</div>
         <div class="dots-bars-1"></div>';
 
