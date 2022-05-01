@@ -124,6 +124,8 @@ class Admin extends Controller
 
 
                 $updateOrder = $modOrder->updateOrder($newDelivery,$newStatus,$orderId);
+            echo "<div class = reussi> Modification de la commande effectuée.</div>";
+            header('Refresh:1.8;url='.path.'admincommandes');
             }
             
             self::renderPanelAdmin('admincommandes', compact('selectedOrder'));

@@ -3,15 +3,15 @@
 <h1>Gestion des commandes :</h1>
 <?php if (!isset($pageask[1]) || !is_numeric($pageask[1])): ?>
 <form action="" method="POST">
-    <label for="idproduct">Trouver les commandes d'un utilisateur par son ID_user.</label>
+    <label for="idproduct">Trouver les commandes d'un utilisateur par son id d'utilisateur.</label>
     <input type="text" id="iduserorder" name="iduserorder" placeholder="ID de l'utilisateur" required>
-    <input type="submit" name="searchorder" value = "Chercher user">
+    <input type="submit" name="searchorder" value = "Chercher les commandes">
 </form>
 
 <form action="" method="POST">
     <label for="idproduct">Trouver directement une commande par son id de commande</label>
     <input type="text" id="idorder" name="idorder" placeholder="ID de l'utilisateur" required>
-    <input type="submit" name="searchorder" value = "Chercher commande">
+    <input type="submit" name="searchorder" value = "Chercher la commande">
 </form>
 
 
@@ -46,8 +46,6 @@
 
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 
-
-<?php var_dump($selectedOrder); ?>
 
 <h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
 

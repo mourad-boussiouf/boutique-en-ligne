@@ -12,6 +12,31 @@ font-size: 14px;
 
 }
 
+.reussi {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+
+.error {
+    position:sticky;
+    width: 100%;
+    position: fixed;
+    top: 167px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+
 #ordermodifi{
     padding-left: 2%;  
 
