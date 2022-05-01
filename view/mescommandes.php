@@ -4,7 +4,12 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
     array_shift($ordersOfUser[$i]); 
     array_shift($ordersOfUser[$i]);           
         }
+
+$main = 0;
+
 ?>
+
+<?php if(!isset($_POST['unfold1'])){ $main = 1; }  ?>
 
 <div class = "container">
   <h2>Vos dernières commandes :</h2>
@@ -12,14 +17,16 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
 <div class = orderlist>
 
 <ul class = "order">
-<?php if (isset($_POST['fold1'])): unset($_POST['unfold1']) ?>
-<form action = "#" method = "POST">
-<input type="submit" value="Votre commande du <?=$ordersOfUser[0]['date']?>  ▬ " name="unfold1" id="unfold1">
+<?php if (!isset($_POST['unfold1'])):  ?>
+<form action = "" method = "POST">
+<input type="submit" value="Votre commande du <?=$ordersOfUser[0]['date']?> ▬ " name="unfold1" id="unfold1">
 </form>
 <?php endif; ?>
-<?php if (isset($_POST['unfold1'])): unset($_POST['fold1']) ?>
+<?php if ($main != 1): ?>
 <form action = "" method = "POST">
 <input type="submit" value="Votre commande du <?=$ordersOfUser[0]['date']?> ▼ " name="fold1" id="unfold12">
+<?php endif; ?>
+<?php if (!isset($_POST['unfold1'])): ?>
 </form>
   <li id='title'>▲ Contenu : ▲</li>
   <li><?=$ordersOfUser[0]['orderline']?></li>
