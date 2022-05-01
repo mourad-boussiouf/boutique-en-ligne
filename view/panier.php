@@ -63,11 +63,11 @@
     </tr>
 
 </table> 
-
+<?php if (!isset($_POST['pay'])): ?> 
 <div id = 'paiementbutton'>
 <form action = "" method = 'POST'>
 <input type="submit" id = "pay" name="pay" value ="Payer">
   </form>
   </div>  
-
+  <?php endif ?>
 </div>
