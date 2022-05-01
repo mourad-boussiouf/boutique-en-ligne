@@ -35,7 +35,9 @@ class Panier extends Controller
 
         if (isset($_POST['pay'])) {
 
+            
             $_SESSION['orderline'] = "";
+            
 
             for ($i=0; $i < count($_SESSION['panier']['libelleProduit'])  ; $i++) { 
             
@@ -43,21 +45,31 @@ class Panier extends Controller
                 ", qté : ".$_SESSION['panier']['qteProduit'][$i].", prix : ".$_SESSION['panier']['prixProduit'][$i]."€.  "; 
                         
             }
-
-         
                            
         echo '<div class = reussi> Votre commande est confirmée. Vous allez être rediriger vers la page de paiement.</div>
         <div class="dots-bars-1"></div>';
-
-        header('Refresh:4;url='.path.'paiement');
+// le temps d'attente est choisi aléatoirement car c'est le gouffre
+        $ran = (random_int(3, 10));
+        if($ran === 3){
+            header('Refresh:3;url='.path.'paiement');
+        }if($ran === 4) {
+            header('Refresh:4;url='.path.'paiement');
+        }if($ran === 5) {
+            header('Refresh:5;url='.path.'paiement');
+        }if($ran === 6) {
+            header('Refresh:6;url='.path.'paiement');
+        }if($ran === 7) {
+            header('Refresh:7;url='.path.'paiement');
+        }if($ran === 8) {
+            header('Refresh:8;url='.path.'paiement');
+        }if($ran === 9) {
+            header('Refresh:9;url='.path.'paiement');
+        }if($ran === 10) {
+            header('Refresh:10;url='.path.'paiement');
         }
-
-
-        
+    }
 
     self::render('panier', compact('prixTotal'));
-
-    }
-    
+}
 }
 ?>

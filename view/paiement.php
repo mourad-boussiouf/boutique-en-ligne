@@ -32,7 +32,7 @@
    
 </div>
 
-     <div id = adressconfirm><span id = "actadresstitle"> La commande sera livrée à cette adresse :</span>
+     <div <?php if (isset($_POST['confirmpay'])): ?> class = "hidden" <?php endif ?> id = adressconfirm><span id = "actadresstitle"> La commande sera livrée à cette adresse :</span>
     <span><?=$_SESSION['nom']?> <?=$_SESSION['prenom']?></span>
     <span><?=$_SESSION['adresse']?></span>
     <a href="<?=path?>mesinfos">Changer mon adresse</a>
@@ -51,6 +51,7 @@
     </form>
     </div>
     </div>
+
 
 
 

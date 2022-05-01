@@ -1,3 +1,8 @@
+.hidden {
+display: none !important;
+}
+
+
 
 .errors {
     background-color: red;
@@ -25,7 +30,8 @@
     background-color: #444;
     color: white;
     text-align: center;
-    font-size: 18px;
+    font-size: x-large;
+height: 30px;
 
 }
 
@@ -175,8 +181,8 @@ background-color: rgb(204, 0, 0);
  .dots-bars-1 {
     color: #444;
     margin-left: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     --c: linear-gradient(currentColor 0 0);
     --r1: radial-gradient(farthest-side at bottom,currentColor 93%,#0000);
     --r2: radial-gradient(farthest-side at top   ,currentColor 93%,#0000);
