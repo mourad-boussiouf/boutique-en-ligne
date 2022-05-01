@@ -100,7 +100,24 @@ class Admin extends Controller
     }
 
     public static function commandes() {
+        $pageask = explode('/', $_GET['p']);
+        $model = new OrdersModel();
 
+        if (isset($_POST['iduserorder'])){
+
+        $idOfUser = intval($_POST['iduserorder']);
+        $ordersOfUser = $model->getOrdersOfAnUser($idOfUser);
+
+        self::renderPanelAdmin('admincommandes', compact('ordersOfUser'));
+        }
+
+        if (isset($pageask[1]) && is_numeric($pageask[1])) {
+            $theOrderId = $pageask[1];
+            $modOrder = new OrdersModel();
+            $selectedOrder = $modOrder->getOne('id',$theOrderId);
+            echo "lol";
+            self::renderPanelAdmin('admincommandes', compact('selectedOrder'));
+        }
 
     self::renderPanelAdmin('admincommandes');
     }

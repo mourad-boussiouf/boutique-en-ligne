@@ -1,8 +1,7 @@
 
 <?php
 for ($i=0; $i < count($ordersOfUser)  ; $i++) {       
-    array_shift($ordersOfUser[$i]); 
-    array_shift($ordersOfUser[$i]);           
+          
         }
 
 
@@ -14,7 +13,7 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
     <h2>Vos dernières commandes :</h2>
         <ul class = "order">
         <li id ='titledate'>Votre commande du <?=$ordersOfUser[0]['date']?> </li>
-        <li id='title'> Contenu : </li>
+        <li id='title'><b>n°<?=$ordersOfUser[0]['id']?> </b> Contenu : </li>
         <li><?=$ordersOfUser[0]['orderline']?></li>
         <li id='title'>Coordonnées de livraison :</li>
         <li><?=$ordersOfUser[0]['delivery_adress']?></li>
@@ -26,7 +25,7 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
 
         <ul class = "order2">
         <li id ='titledate'>Votre commande du <?=$ordersOfUser[1]['date']?> </li>
-        <li id='title'> Contenu : </li>
+        <li id='title'><b>n°<?=$ordersOfUser[1]['id']?> </b> Contenu : </li>
         <li><?=$ordersOfUser[1]['orderline']?></li>
         <li id='title'>Coordonnées de livraison :</li>
         <li><?=$ordersOfUser[1]['delivery_adress']?></li>
@@ -39,7 +38,7 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
         
         <ul class = "order3">
         <li id ='titledate'>Votre commande du <?=$ordersOfUser[2]['date']?> </li>
-        <li id='title'> Contenu : </li>
+        <li id='title'><b>n°<?=$ordersOfUser[2]['id']?> </b> Contenu : </li>
         <li><?=$ordersOfUser[2]['orderline']?></li>
         <li id='title'>Coordonnées de livraison :</li>
         <li><?=$ordersOfUser[2]['delivery_adress']?></li>
@@ -52,6 +51,7 @@ for ($i=0; $i < count($ordersOfUser)  ; $i++) {
        
 
     </div>
+
 
         
     

@@ -34,8 +34,6 @@ class Mesinfos extends Controller
         $model = new OrdersModel();
         $ordersOfUser = $model->getOrdersOfAnUser($id_user);
 
-        
-
         self::render('mescommandes', compact('ordersOfUser'));
     }
 
