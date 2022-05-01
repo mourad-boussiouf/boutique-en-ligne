@@ -15,6 +15,14 @@ class OrdersModel extends Model{
               
     }  
 
+    public function getOrdersOfAnUser($id_user)
+    {
+        $sth = $this->_connexion->prepare("SELECT * FROM orders WHERE id_user = $id_user");
+        $sth->execute();
+        return $sth->fetchall(PDO::FETCH_ASSOC);
+    }
+
+
 }
 
 

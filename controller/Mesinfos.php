@@ -30,7 +30,11 @@ class Mesinfos extends Controller
 
 
     public static function mescommandes(){
-        self::render('mescommandes');
+        $id_user = $_SESSION['id'];
+        $model = new OrdersModel();
+        $ordersOfUser = $model->getOrdersOfAnUser($id_user);
+
+        self::render('mescommandes', compact('ordersOfUser'));
     }
 
 
