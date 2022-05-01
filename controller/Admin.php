@@ -98,6 +98,12 @@ class Admin extends Controller
         }
         self::renderPanelAdmin('adminuser',  compact('userlist'));
     }
+
+    public static function commandes() {
+
+
+    self::renderPanelAdmin('admincommandes');
+    }
 }
 
 

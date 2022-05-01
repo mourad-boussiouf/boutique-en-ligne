@@ -40,14 +40,14 @@ $pageask = explode('/', $_GET['p']);
 
       <ul>
         <li class="home"><a href="<?= path ?>">Accueil</a></li>
-        <li class="news"><a href="#">Nouveautés</a></li>
         <li class="articles"><a href="<?= path ?>articles">Vêtements</a></li>
         <li class="contact"><a href="#">À propos</a></li>
         <?php if (!isset($_SESSION['id'])): ?>
         <li class="auth"><a href="<?= path ?>authentification">Je me gouffre</a></li>
         <?php endif; ?>
         <?php if(isset($_SESSION['id'])):?>
-        <li class="mesinfos"><a href="<?= path ?>mesinfos">Mes informations</a></li>
+        <li class="mesinfos"><a href="<?= path ?>mesinfos">Mes infos</a></li>
+        <li class="mescommandes"><a href="<?= path ?>mescommandes">Mes commandes</a></li>
         <li class="deco"><a href="<?= path ?>deconnexion">Déconnexion</a></li>
             <?php if($_SESSION['droit']==2):?>
             <li class="admin"><a href="<?=path?>admin">Page admin</a></li>

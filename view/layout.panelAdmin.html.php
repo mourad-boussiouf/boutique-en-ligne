@@ -49,7 +49,7 @@ $pageask = explode('/', $_GET['p']);
     
         <li class="admin"><a href="<?=path?>adminarticles">Gestion ARTICLES & CATEGORIES</a></li>
         <li class="adminuser"><a href="<?=path?>adminuser">Gestion UTILISATEURS</a></li>
-        <li class="adminorder"><a href="<?=path?>admin">Gestion COMMANDES</a></li>
+        <li class="adminorder"><a href="<?=path?>admincommandes">Gestion COMMANDES</a></li>
     
 </div>
 </header>

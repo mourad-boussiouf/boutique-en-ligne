@@ -33,25 +33,52 @@ class Paiement extends Controller
             $_SESSION['panier']['qteProduit'] = array();
             $_SESSION['panier']['prixProduit'] = array();
 // Nous procédons à une discrimination de classe suivant le montant de l'achat du client ce qui est je trouve somme toute normal.
-            if ($totalprice <= 20){
-            echo '<div class = reussi> Nous interrogeons votre banque. Veillez patientez.</div>
-            <div class="dots-bars-1"></div>';}
+
+            if ($totalprice < 20){
+            echo "<div class = 'reussi'> On interroge la Banque Postale le prolix, si c'est le 5 peut être que le 
+            paiement passera.</div>
+            <div class='dots-bars-1'></div>";}
+
             if ($totalprice < 300 && $totalprice > 20 ){
                 echo '<div class = reussi> Nous interrogeons votre banque. Veillez patientez.</div>
                 <div class="dots-bars-1"></div>';}
+
             if ($totalprice >= 300){
-                echo '<div class = reussi> Nous interrogeons la HSBC monsieur la moumou</div>
-            <div class="dots-bars-1"></div>';}
+                echo '<div class = "reussi"> Nous interrogeons la HSBC pour vous monsieur la moumou. Notre intégrateur web au smic
+                va vous préparer un thé matcha.</div>
+                <div class="dots-bars-1"></div>';}
+            
         
-    
-            header('Refresh:5;url='.path.'paiementsucces');
-
-
+                $ran = (random_int(5,12));
+                if($ran === 5){
+                    header('Refresh:5;url='.path.'paiementsucces');
+                }if($ran === 6) {
+                    header('Refresh:6;url='.path.'paiementsucces');
+                }if($ran === 7) {
+                    header('Refresh:7;url='.path.'paiementsucces');
+                }if($ran === 8) {
+                    header('Refresh:8;url='.path.'paiementsucces');
+                }if($ran === 9) {
+                    header('Refresh:9;url='.path.'paiementsucces');
+                }if($ran === 10) {
+                    header('Refresh:10;url='.path.'paiementsucces');
+                }if($ran === 11) {
+                    header('Refresh:11;url='.path.'paiementsucces');
+                }if($ran === 12) {
+                    header('Refresh:12;url='.path.'paiementsucces');
+                }
         }
-        
-
-
         self::render('paiement', compact('prixTotal','recap'));
+    }
+
+
+
+    
+
+    public static function succes() {
+
+
+        self::render('paiementsucces');
     }
 
 }

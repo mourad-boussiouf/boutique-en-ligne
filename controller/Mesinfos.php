@@ -28,4 +28,10 @@ class Mesinfos extends Controller
     self::render('mesinfos');
     }
 
+
+    public static function mescommandes(){
+        self::render('mescommandes');
+    }
+
+
 }

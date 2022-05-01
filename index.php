@@ -36,16 +36,22 @@ $pageask = explode('/', $_GET['p']);
     }
     elseif ($pageask[0] == 'mesinfos') {
         Mesinfos::index();
+    }elseif ($pageask[0] == 'mescommandes') {
+        Mesinfos::mescommandes();
     }elseif ($pageask[0] == 'admin') {
         Admin::index();
     }elseif ($pageask[0] == 'adminarticles') {
         Admin::articles();
+    }elseif ($pageask[0] == 'admincommandes') {
+        Admin::commandes();
     }elseif ($pageask[0] == 'adminuser') {
         Admin::user();
     }elseif ($pageask[0] == 'panier') {
         Panier::index();
     }elseif ($pageask[0] == 'paiement') {
         Paiement::index();
+    }elseif ($pageask[0] == 'paiementsuccess') {
+        Paiement::succes();
     }else{
         Accueil::index();
     }
