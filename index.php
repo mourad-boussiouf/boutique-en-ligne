@@ -50,7 +50,7 @@ $pageask = explode('/', $_GET['p']);
         Panier::index();
     }elseif ($pageask[0] == 'paiement') {
         Paiement::index();
-    }elseif ($pageask[0] == 'paiementsuccess') {
+    }elseif ($pageask[0] == 'paiementsucces') {
         Paiement::succes();
     }else{
         Accueil::index();

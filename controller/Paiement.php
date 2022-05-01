@@ -77,6 +77,7 @@ class Paiement extends Controller
 
     public static function succes() {
 
+        header('Refresh:3.3;url='.path.'mescommandes');
 
         self::render('paiementsucces');
     }
