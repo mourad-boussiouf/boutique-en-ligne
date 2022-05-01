@@ -48,7 +48,7 @@
   </tr>
   <?php foreach ($_SESSION['panier']['prixProduit'] as $value): ?>
         <tr>
-        <td id = pricedisplay><?=$value ?></td>
+        <td id = pricedisplay><?=$value ?>€</td>
         </tr>
     <?php endforeach; ?>
 </table> 
@@ -63,6 +63,7 @@
     </tr>
 
 </table> 
+
 <div id = 'paiementbutton'>
 <form action = "" method = 'POST'>
 <input type="submit" id = "pay" name="pay" value ="Payer">

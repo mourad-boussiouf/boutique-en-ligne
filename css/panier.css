@@ -32,19 +32,33 @@
 }
 
 table {
+
 min-height: 250px;
-width: 15%;
-min-width: 100px;
+width: 10%;
+min-width: 60px;
+border-bottom: 1px dotted;
+
 }
 
 .cartresume{
+  align-items: middle;
+
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
+min-width: 280px;
 }
 
 td {
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 display: flex;
 text-align: center;
+font-size: 16.8px;
+}
+
+th{
+  margin-left: -5px;
 }
 
 form input[type=text] {
@@ -52,6 +66,7 @@ display: none !important;
   }
 
   form input[type=submit] {
+    align-items: center;
       font-family: monospace;
       font-size: 14px;
       border-radius: 6px;
@@ -61,26 +76,67 @@ color: white;
 
 
 #paiementbutton form input[type=submit] {
+margin-top: 10%;
 height: 50px;
 width: 200px;
 font-weight: 600;
 font-size: 24px;
 }
 
-#pricetotal {
-display: flex;
-justify-content: center;
+#paiementbutton form input[type=submit]:hover {
+color: #444;
+
 }
 
+@media (max-width: 425px) { 
+  #paiementbutton form input[type=submit] {
+    margin-top: -52px;
+    height: 90px;
+    width: 256px;
+    font-weight: 600;
+    font-size: 52px;
+}
+
+th{
+
+  font-size: 14px;
+  font-weight: 400;
+  }
+  td{
+
+    font-size: 15px;
+    font-weight: 400;
+    }
+  
+
+}
+
+#pricetotal {
+margin-right: 2px;
+display: flex;
+justify-content: center;
+align-items: middle;
+flex-wrap: wrap;
+margin-bottom: 23px;
+min-width: 200px;
+font-size: 22px;
+font-family: monospace;
+}
+
+
+
 #quantitydisplay{
+margin-top: -4px;
 font-family: monospace;
 font-weight: 600;
-font-size: 24px;
+font-size: 22px;
 display: flex;
 justify-content: center;
 }
 
 #pricedisplay {
+  margin-left: -20px;
+padding-bottom: 2px;
 display: flex;
 justify-content: center;  
 }
