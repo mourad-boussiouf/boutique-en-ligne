@@ -48,6 +48,28 @@
 
 
 <?php var_dump($selectedOrder); ?>
+
+<h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
+
+<form action="" method="POST">
+    <label for="name">N° de commande</label>
+    <input type="text" id="idorderdisplay" name="idorderdisplay" placeholder=<?= $selectedOrder[0]['id']; ?>  disabled="disabled">
+    <label for="price">ID utilisateur</label>
+    <input type="text" id="iduserdisplay" name="iduserdisplay" value=<?= $selectedOrder[0]['id_user']; ?>  disabled="disabled">
+    <label for="image">Contenu commande</label>
+    <input type="text" id="orderlinedisplay" name="orderlinedisplay"value="<?= $selectedOrder[0]['orderline'] ?>" required>
+    <br>
+    <label for="adressuser">Adresse utilisateur</label>
+    <input type="text" id="adressuser" name="adressuser" value="<?= $selectedUser[0]['adresse'] ?>"   required>
+    <br>
+    <label for="short">Niveau de droit</label>
+    <input type="text" id="rankuser" name="rankuser" value=<?= $selectedUser[0]['id_droit']; ?> required>
+    <label for="short">Nom utilisateur</label>
+    <input type="text" id="lastnameuser" name="lastnameuser" value=<?= $selectedUser[0]['nom']; ?> required>
+    <label for="short">Prenom utilisateur</label>
+    <input type="text" id="firstnameuser" name="firstnameuser" value=<?= $selectedUser[0]['prenom']; ?> required>
+    <input type="submit" name="modifyuser" value ="Modifier">
+</form>
    
 
     <?php endif; ?>
