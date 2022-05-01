@@ -1,14 +1,14 @@
 /* Messages d'erreur et de succès du panier */
 
 .errors {
-    background-color: red;
+    background-color: #FF0000;
     color: white;
     text-align: center;
     font-size: x-large;
 }
 
 .error {
-    background-color: red;
+    background-color: #FF0000;
     color: white;
     text-align: center;
     font-size: x-large;
@@ -56,7 +56,7 @@ display: none !important;
       font-size: 14px;
       border-radius: 6px;
 color: white;
-    background-color: rgb(204, 0, 0);
+    background-color: #FF0000;
       }
 
 
