@@ -32,10 +32,17 @@ class Paiement extends Controller
             $_SESSION['panier']['libelleProduit'] = array();
             $_SESSION['panier']['qteProduit'] = array();
             $_SESSION['panier']['prixProduit'] = array();
-
-            
+// Nous procédons à une discrimination de classe suivant le montant de l'achat du client ce qui est je trouve somme toute normal.
+            if ($totalprice <= 20){
             echo '<div class = reussi> Nous interrogeons votre banque. Veillez patientez.</div>
-            <div class="dots-bars-1"></div>';
+            <div class="dots-bars-1"></div>';}
+            if ($totalprice < 300 && $totalprice > 20 ){
+                echo '<div class = reussi> Nous interrogeons votre banque. Veillez patientez.</div>
+                <div class="dots-bars-1"></div>';}
+            if ($totalprice >= 300){
+                echo '<div class = reussi> Nous interrogeons la HSBC monsieur la moumou</div>
+            <div class="dots-bars-1"></div>';}
+        
     
             header('Refresh:5;url='.path.'paiementsucces');
 

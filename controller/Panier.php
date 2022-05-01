@@ -46,7 +46,7 @@ class Panier extends Controller
                         
             }
                            
-        echo '<div class = reussi> Votre commande est confirmée. Vous allez être rediriger vers la page de paiement.</div>
+        echo '<div class = reussi> Votre commande est confirmée. Vous allez être redirigé vers la page de paiement (peut-être).</div>
         <div class="dots-bars-1"></div>';
 // le temps d'attente est choisi aléatoirement car c'est le gouffre
         $ran = (random_int(3, 10));
