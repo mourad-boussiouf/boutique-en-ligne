@@ -115,7 +115,17 @@ class Admin extends Controller
             $theOrderId = $pageask[1];
             $modOrder = new OrdersModel();
             $selectedOrder = $modOrder->getOne('id',$theOrderId);
-            echo "lol";
+
+            if (isset($_POST['modifyorder'])) {
+
+                $newDelivery = $_POST['deliverydisplay'];
+                $newStatus = $_POST['statusdisplay'];
+                $orderId = $pageask[1];
+
+
+                $updateOrder = $modOrder->updateOrder($newDelivery,$newStatus,$orderId);
+            }
+            
             self::renderPanelAdmin('admincommandes', compact('selectedOrder'));
         }
 

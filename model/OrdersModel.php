@@ -23,6 +23,13 @@ class OrdersModel extends Model
         return $sth->fetchall(PDO::FETCH_ASSOC);
     }
 
+    public function updateOrder($newDelivery, $newStatus, $orderId)
+    {
+        $sth = $this->_connexion->prepare('UPDATE `orders` SET `delivery_adress` = ?, `order_status` = ? WHERE `id` = ?');
+        $sth->execute(array($newDelivery, $newStatus, $orderId));
+    }
+
+
 
 }
 

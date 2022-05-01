@@ -1,0 +1,19 @@
+#orderlinedisplay  {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+margin-top: 1%;
+padding-top: 3px;
+padding-bottom: 3px;
+width: 75%;
+height: 25%;
+font-size: 14px;
+
+}
+
+#ordermodifi{
+    padding-left: 2%;  
+
+}
+
