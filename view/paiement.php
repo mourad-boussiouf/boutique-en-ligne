@@ -40,8 +40,8 @@
     <form action = "" method = "POST">
     <label for="moyen_paiement">Numero de carte bleue :</label>
     <input type="text" id="metlasans" name = "metlasans" placeholder="5356 1274 4200 1337">
-    <label for="moyen_paiement">Moyen de paiement :</label>
-    <select name="moyen_paiement">
+    <label for="paymentselect">Moyen de paiement :</label>
+    <select  id = "paymentselect" name=paymentselect>
     <option value="Paypal">Paypal</option>
     <option value="Mastercard">Mastercard</option>
     <option value="VISA">VISA</option>

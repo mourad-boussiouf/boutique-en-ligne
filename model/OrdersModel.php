@@ -1,5 +1,5 @@
 <?php
-class CategorieModel extends Model{
+class OrdersModel extends Model{
     public function __construct()
     {
         $this->table="orders";
@@ -7,11 +7,11 @@ class CategorieModel extends Model{
     }
 
 
-    public function insertOrders($orderline, $totalprice, $moyen_paiement, $adress_user, $id_user,)
+    public function insertOrders($id_user, $orderline, $totalprice, $moyen_paiement, $delivery_adress)
     {  
       
-              $sth = $this->_connexion->prepare("INSERT INTO orders(achats, date, price, moyen_paiement, id_user,) VALUES (?,NOW(),?,?,?,?,?,'paid')");
-              $sth->execute(array($orderline, $totalprice, $moyen_paiement, $adress_user, $id_user));
+              $sth = $this->_connexion->prepare("INSERT INTO orders( id_user , orderline , totalprice , date , moyen_paiement , delivery_adress , order_status ) VALUES (?,?,?,NOW(),?,?,'paid')");
+              $sth->execute(array($id_user, $orderline, $totalprice, $moyen_paiement, $delivery_adress));
               
     }  
 

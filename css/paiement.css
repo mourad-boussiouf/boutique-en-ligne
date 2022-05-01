@@ -1,4 +1,33 @@
 
+.errors {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+.success {
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+.reussi {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+
+}
 
 .mastercontainer{
 display: flex;
@@ -141,6 +170,41 @@ background-color: rgb(204, 0, 0);
    background-image: radial-gradient(circle at 13px 0, rgba(255,255,255,0) 0.4em, #fff 0.5em);
    background-position: top left, top right;
  }
+
+
+ .dots-bars-1 {
+    color: #444;
+    margin-left: 50%;
+    width: 30px;
+    height: 30px;
+    --c: linear-gradient(currentColor 0 0);
+    --r1: radial-gradient(farthest-side at bottom,currentColor 93%,#0000);
+    --r2: radial-gradient(farthest-side at top   ,currentColor 93%,#0000);
+    background: 
+      var(--c) ,
+      var(--r1),
+      var(--r2),
+      var(--c) ,  
+      var(--r1),
+      var(--r2),
+      var(--c) ,
+      var(--r1),
+      var(--r2);
+    background-repeat: no-repeat;
+    animation: db1 1s infinite  alternate;
+  }
+  
+  @keyframes db1 {
+    0%,10% {
+      background-size: 8px 0,8px 4px,8px 4px;
+      background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+   }
+   90%,100% {
+      background-size: 8px 100%,8px 4px, 8px 4px;
+      background-position: 0 50%,0 -2px,0 calc(100% + 2px),50% 50%,50% -2px,50% calc(100% + 2px),100% 50%,100% -2px,100% calc(100% + 2px);
+   }
+  }
+  
  
  
  

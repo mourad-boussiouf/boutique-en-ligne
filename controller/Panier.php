@@ -49,7 +49,7 @@ class Panier extends Controller
         echo '<div class = reussi> Votre commande est confirmée. Vous allez être rediriger vers la page de paiement.</div>
         <div class="dots-bars-1"></div>';
 
-        header('Refresh:5;url='.path.'paiement');
+        header('Refresh:4;url='.path.'paiement');
         }
 
 
