@@ -14,7 +14,6 @@ class ArticlesModel extends Model
         $sth = $this->_connexion->prepare('SELECT COUNT(*) AS nb_article FROM products');
         $sth->execute();
         return $sth->fetch();
-
     }
 
     public function getArticlesByDate() // read tous les produits ordonnés par le plus recent
@@ -61,7 +60,6 @@ class ArticlesModel extends Model
         $sth->execute(["term" => $keyword.'%']);
         $searchResults = $sth->fetchAll();
         return $searchResults;
-
     }
 
     
