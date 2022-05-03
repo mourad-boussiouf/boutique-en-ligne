@@ -23,13 +23,19 @@ class Panier extends Controller
        
         if (isset($_POST['AddSubmit'])){
         $maxoucreve = $_POST['add'];
-        $decremquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);   
+        $decremquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);  
+        $prixTotal = $model->MontantGlobal();
+
+        self::render('panier', compact('prixTotal'));
         
         }
         
         if (isset($_POST['RemSubmit'])){
         $maxoucreve = $_POST['decrease'];
-        $moinsquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);;
+        $moinsquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);
+        $prixTotal = $model->MontantGlobal();
+
+        self::render('panier', compact('prixTotal'));
        
         }
 
