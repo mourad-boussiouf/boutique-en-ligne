@@ -18,6 +18,9 @@ class Panier extends Controller
         if (isset($_POST['delArticleCart']))
         {   
         $enlevestp = $model->supprimerArticle($libelleProduit);
+        $prixTotal = $model->MontantGlobal();
+
+        self::render('panier', compact('prixTotal'));
        
         }
        
