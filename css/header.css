@@ -144,7 +144,7 @@ background-color: black;
       line-height: 50px;
       font-size: 1.4em;
     }
-   
+
     .nav li {
       display: inline-block;
       margin-right: 8.5px; }
@@ -174,4 +174,11 @@ background-color: black;
       }
 
 
+}
+
+
+@media (max-width: 425px) { 
+  html {
+      overflow-x: hidden;
+  }
 }

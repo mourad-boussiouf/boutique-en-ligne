@@ -156,13 +156,13 @@
 
         <ul id="fullimage">
 
-        <li id="desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
+        <li id="img1"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>">
         
                 <li id="koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>">        
         </ul>
         <ul id="thumbimage">
         <li>
-                <a href="#desert"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
+                <a href="#img1"> <img src="<?= path ?>assets/images/<?= $produit[0]['image'] ?>"> </a>
         </li>
         <li>
                 <a href="#koala"> <img src="<?= path ?>assets/images/<?= $produit[0]['image2'] ?>"> </a>

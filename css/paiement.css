@@ -211,6 +211,12 @@ background-color: rgb(204, 0, 0);
    }
   }
   
+
+  @media (max-width: 425px) { 
+    html {
+        overflow-x: hidden;
+    }
+  }
  
  
  

@@ -184,7 +184,16 @@ margin-left: 10px;
 
     }
 
+
 }
+
+@media (max-width: 425px) { 
+  html {
+      overflow-x: hidden;
+  }
+
+}
+
 
 
 .productpictures {
@@ -285,7 +294,7 @@ margin-left: 10px;
              -moz-animation-name: slidein;
              -webkit-animation-name: slidein;
  }
- #desert:target {
+ #img1:target {
    
    -moz-animation-duration: 1s;
              -webkit-animation-duration: 1s;

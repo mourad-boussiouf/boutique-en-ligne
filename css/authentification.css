@@ -86,3 +86,18 @@ form a {
     text-align: center;
     font-size: x-large;
 }
+
+@media (max-width: 425px) { 
+    html {
+        overflow-x: hidden;
+    }
+
+    .container {
+        text-align: center;
+        flex-direction: column-reverse;
+        width: 200px;
+        height: 1150px;
+
+        }
+    
+}
