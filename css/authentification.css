@@ -90,13 +90,16 @@ form a {
 @media (max-width: 425px) { 
     html {
         overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     .container {
-        text-align: center;
-        flex-direction: column-reverse;
-        width: 200px;
-        height: 1150px;
+display: flex;
+flex-direction: column-reverse;
+justify-content: center;
+margin-top:-1px;    
+height: 1150px;
+margin-left: 10px;
 
         }
     

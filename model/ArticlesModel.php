@@ -24,6 +24,17 @@ class ArticlesModel extends Model
         return $artdate;
     }
 
+    public function getProduitsPhares() // read tous les produits ordonnés par le plus recent
+    {
+        $sth = $this->_connexion->prepare('SELECT * FROM ' . $this->table . ' ORDER BY DATE ASC LIMIT 5 ');
+        $sth->execute();
+        $artdate = $sth->fetchall(PDO::FETCH_ASSOC);
+        return $artdate;
+    }
+
+
+
+
 
 
     public function getArticlesFormProducts($limit, $articles) // read tous les produits avec une limit
