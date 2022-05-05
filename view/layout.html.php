@@ -12,19 +12,15 @@ $pageask = explode('/', $_GET['p']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?= path ?>css/<?php if ($pageask[0]!="") {
-        echo $pageask[0];
+         echo 'accueil';
+
     } else {
-        echo 'page-accueil';
+        echo 'accueil';
     } ?>.css">
     <link rel="stylesheet" href="<?= path ?>css/header.css">
     <link rel="stylesheet" href="<?= path ?>css/footer.css">
     
-    <script src="scripts.js"></script>
-    <script src="<?=path?>ASSET/js/<?php if (isset($pageask[0])) {
-        echo $pageask[0];
-    } else {
-        echo 'page-accueil';
-    } ?>.js"></script>
+
     <title></title>
 </head>
 <body>

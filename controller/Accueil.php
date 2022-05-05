@@ -6,10 +6,13 @@ class Accueil extends Controller {
     }
     public static function index()
     {
-        
+        $model = new ArticlesModel();
+        $prodphares = $model->getProduitsPhares();
+        $prodnouveaux = $model->getArticlesByDate();
 
-        
-        self::render('accueil');
+
+
+        self::render('accueil', compact('prodphares','prodnouveaux'));
 
     }
 }

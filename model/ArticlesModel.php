@@ -28,8 +28,8 @@ class ArticlesModel extends Model
     {
         $sth = $this->_connexion->prepare('SELECT * FROM ' . $this->table . ' ORDER BY DATE ASC LIMIT 5 ');
         $sth->execute();
-        $artdate = $sth->fetchall(PDO::FETCH_ASSOC);
-        return $artdate;
+        $artphares = $sth->fetchall(PDO::FETCH_ASSOC);
+        return $artphares;
     }
 
 
