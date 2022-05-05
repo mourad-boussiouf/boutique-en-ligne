@@ -31,7 +31,8 @@ $pageask = explode('/', $_GET['p']);
     <div class = cart><a href="<?= path ?>panier">PANIER (<?= $numberArticleInCart ?>)</a></div>
 <?php endif; ?>
 
-    <div class = logo> <img src="<?= path ?>assets/images/Logo.png" alt=""> </div>
+    <div class = logo><a href="<?= path ?>"> <img src="<?= path ?>assets/images/Logo.png" alt="LEGOUFFRE écrit en
+    blanc immaculé sur fond gris"> </a> </div>
     <div class="nav">
 
       <ul>
