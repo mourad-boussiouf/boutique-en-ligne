@@ -100,8 +100,15 @@ class Admin extends Controller
     }
 
     public static function commandes() {
+
         $pageask = explode('/', $_GET['p']);
         $model = new OrdersModel();
+
+        if (!empty($_POST['idorder'])) {
+            $pageask[1] = intval($_POST['idorder']);
+            header('Refresh:0;url='.path.'admincommandes/'.$pageask[1]);
+
+        }
 
         if (isset($_POST['iduserorder'])){
 
@@ -111,12 +118,14 @@ class Admin extends Controller
         self::renderPanelAdmin('admincommandes', compact('ordersOfUser'));
         }
 
+
         if (isset($pageask[1]) && is_numeric($pageask[1])) {
             $theOrderId = $pageask[1];
             $modOrder = new OrdersModel();
             $selectedOrder = $modOrder->getOne('id',$theOrderId);
 
-            if (isset($_POST['modifyorder'])) {
+
+            if (!empty($_POST['modifyorder'])) {
 
                 $newDelivery = $_POST['deliverydisplay'];
                 $newStatus = $_POST['statusdisplay'];

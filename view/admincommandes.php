@@ -9,8 +9,8 @@
 </form>
 
 <form action="" method="POST">
-    <label for="idproduct">Trouver directement une commande par son id de commande</label>
-    <input type="text" id="idorder" name="idorder" placeholder="ID de l'utilisateur" required>
+    <label for="idproduct">Trouver directement une commande par id de commande</label>
+    <input type="text" id="idorder" name="idorder" placeholder="ID de commande" required>
     <input type="submit" name="searchorder" value = "Chercher la commande">
 </form>
 
