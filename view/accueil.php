@@ -23,7 +23,7 @@
   
     <h2>Nos produits phares :</h2>
 
-
+    <div class = 'phares'>
     <div align="center">
   <div class="contener_slideshow">
     <div class="contener_slide">
@@ -33,9 +33,11 @@
     </div>
   </div>
 </div>
+<span id = 'link'> <a href="<?=path?>articles">Voir la boutique</a> </span>
+</div>
 
 <h2>Les derniers arrivages :</h2>
-
+<div class = 'arrivages'>
 <div align="center">
   <div class="contener_slideshow">
     <div class="contener_slide">
@@ -44,6 +46,8 @@
       <div class="slid_3"><p><?=$prodnouveaux[2]['name']?></p><img src="<?= path ?>assets/images/<?=$prodnouveaux[2]['image']?>"></div>
     </div>
   </div>
+</div>
+<span id = 'link'> <a href="<?=path?>articles">Gouffrage</a> </span>
 </div>
 
 </html>
