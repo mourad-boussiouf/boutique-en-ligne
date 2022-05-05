@@ -8,18 +8,6 @@
     
 </head>
 
-
-          <div class = leGouffre> 
-            <span>L</span>
-            <span>e</span>
-            <span>G</span>
-            <span>o</span>
-            <span>u</span>
-            <span>f</span>
-            <span>f</span>
-            <span>r</span>
-            <span>e</span>
-          </div>
   
     <h2>Nos produits phares :</h2>
 
