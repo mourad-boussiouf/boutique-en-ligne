@@ -3,7 +3,7 @@
 <h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
 
 <form action="" method="POST">
-<label for="name">Mon idenfitifant</label>
+<label for="name">Mon identifant</label>
 <input type="text" id="iduser" name="iduser" placeholder=<?= $_SESSION['id'] ?>  disabled="disabled">
 <label for="price">Modifier mon adresse e-mail</label>
 <input type="text" id="emailuser" name="emailuser" value=<?= $_SESSION['email'] ?> required>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 02 mai 2022 à 00:52
+-- Généré le : ven. 06 mai 2022 à 00:38
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -24,23 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cart`
---
-
-DROP TABLE IF EXISTS `cart`;
-CREATE TABLE IF NOT EXISTS `cart` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_product` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `id_user` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=141 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `categories`
 --
 
@@ -57,9 +40,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 
 INSERT INTO `categories` (`id`, `name`) VALUES
 (1, 'T-shirts'),
-(2, 'Couvre-chefs'),
-(3, 'lolilol'),
-(4, 'hhh');
+(2, 'Couvre-chefs');
 
 -- --------------------------------------------------------
 
@@ -99,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `delivery_adress` varchar(255) NOT NULL,
   `order_status` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `orders`
@@ -107,20 +88,33 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 INSERT INTO `orders` (`id`, `id_user`, `orderline`, `totalprice`, `date`, `moyen_paiement`, `delivery_adress`, `order_status`) VALUES
 (61, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.  ', 20, '2022-05-01 23:15:04', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
-(44, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 1, prix : 15€.  ', 15, '2022-05-01 03:18:58', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
+(44, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 1, prix : 15€.  ', 15, '2022-05-01 03:18:58', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
 (36, 40, ' •Bob \'Gamberge baba\' dans la taille m, qté : 1, prix : 15€.  ', 15, '2022-05-01 02:57:50', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (54, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •Bob \'Gamberge baba\' dans la taille s, qté : 1, prix : 15€.   •Bob \'Maître du game\' dans la taille s, qté : 1, prix : 15€.   •T-shirt \'Still at the bottom\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Version qui marche\' dans la taille xs, qté : 1, prix : 20€.  ', 90, '2022-05-01 07:01:48', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (38, 40, ' •Bob \'Gamberge baba\' dans la taille m, qté : 1, prix : 15€.  ', 15, '2022-05-01 02:58:38', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (39, 40, ' •Bob \'Gamberge baba\' dans la taille m, qté : 1, prix : 15€.  ', 15, '2022-05-01 03:03:51', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (63, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.  ', 20, '2022-05-02 01:40:34', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
 (62, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Version qui marche\' dans la taille xs, qté : 1, prix : 20€.   •Bob \'Maître du game\' dans la taille s, qté : 1, prix : 15€.   •T-shirt \'Welcome to the gouffre\' dans la taille xs, qté : 1, prix : 20€.  ', 75, '2022-05-02 01:30:38', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(66, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.  ', 20, '2022-05-02 02:58:19', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
 (60, 40, ' •T-shirt \'ACID transaction\' dans la taille l, qté : 1, prix : 20€.  ', 20, '2022-05-01 23:10:18', 'Bitcoin', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
 (58, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 50, prix : 15€.   •T-shirt \'Still at the bottom\' dans la taille xxl, qté : 31, prix : 20€.   •T-shirt \'ACID transaction\' dans la taille m, qté : 5, prix : 20€.  ', 1470, '2022-05-01 16:36:07', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (57, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 1, prix : 15€.   •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Still at the bottom\' dans la taille xs, qté : 1, prix : 20€.  ', 55, '2022-05-01 07:56:17', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'paid'),
 (56, 40, ' •T-shirt \'Max ou crève\' dans la taille xl, qté : 1, prix : 20€.  ', 20, '2022-05-01 07:55:29', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
 (55, 40, ' •T-shirt \'Max ou crève\' dans la taille l, qté : 3, prix : 20€.   •T-shirt \'Version qui marche\' dans la taille l, qté : 1, prix : 20€.   •T-shirt \'Welcome to the gouffre\' dans la taille m, qté : 2, prix : 20€.   •T-shirt \'Still at the bottom\' dans la taille l, qté : 1, prix : 20€.  ', 140, '2022-05-01 07:54:41', 'Paypal', 'Boussiouf Mourad ; 77,Boulevard Heri Barnier ,13015,Marseille', 'impayée'),
 (64, 40, ' •T-shirt \'Version qui marche\' dans la taille xs, qté : 1, prix : 20€.  ', 20, '2022-05-02 01:48:28', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
-(65, 40, ' •T-shirt \'Masterclass\' dans la taille xxxl, qté : 45, prix : 42€.  ', 1890, '2022-05-02 02:47:31', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée');
+(65, 40, ' •T-shirt \'Masterclass\' dans la taille xxxl, qté : 45, prix : 42€.  ', 1890, '2022-05-02 02:47:31', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(67, 40, ' •Bob \'Maître du game\' dans la taille m, qté : 1, prix : 15€.   •T-shirt \'Still at the bottom\' dans la taille l, qté : 1, prix : 20€.   •T-shirt \'Masterclass\' dans la taille xs, qté : 1, prix : 42€.   •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Masterclass\' dans la taille m, qté : 1, prix : 42€.   •T-shirt \'C\'est quoi ISSET ?\' dans la taille m, qté : 1, prix : 20€.   •T-shirt \'Version qui marche\' dans la taille xs, qté : 1, prix : 20€.  ', 179, '2022-05-02 03:43:05', 'Bitcoin', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(68, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •Bob \'Gamberge baba\' dans la taille l, qté : 1, prix : 15€.  ', 35, '2022-05-02 04:46:30', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(69, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 16, prix : 20€.   •T-shirt \'C\'est quoi ISSET ?\' dans la taille xs, qté : 17, prix : 20€.   •T-shirt \'Welcome to the gouffre\' dans la taille xs, qté : 2, prix : 20€.   •T-shirt \'Version qui marche\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Masterclass\' dans la taille xxl, qté : 42, prix : 42€.   •T-shirt \'Masterclass\' dans la taille xs, qté : 2, prix : 42€.   •T-shirt \'Masterclass\' dans la taille l, qté : 39, prix : 42€.   •T-shirt \'Still at the bottom\' dans la taille xxxl, qté : 1, prix : 20€.   •T-shirt \'Still at the bottom\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'ACID transaction\' dans la taille xl, qté : 2, prix : 20€.   •T-shirt \'Masterclass\' dans la taille xl, qté : 3, prix : 42€.   •T-shirt \'C\'est quoi ISSET ?\' dans la taille grossophobie, qté : 1, prix : 20€.   •Bob \'Maître du game\' dans la taille l, qté : 2, prix : 15€.   •Bob \'Gamberge baba\' dans la taille m, qté : 1, prix : 15€.  ', 4477, '2022-05-02 05:04:46', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(70, 40, ' •T-shirt \'Masterclass\' dans la taille xl, qté : 1, prix : 42€.   •T-shirt \'Version qui marche\' dans la taille s, qté : 1, prix : 20€.   •T-shirt \'C\'est quoi ISSET ?\' dans la taille m, qté : 1, prix : 20€.  ', 82, '2022-05-02 14:02:43', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payéee'),
+(71, 40, ' •Bob \'Gamberge baba\' dans la taille m, qté : 10, prix : 15€.  ', 150, '2022-05-03 20:53:52', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(72, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 2, prix : 15€.  ', 30, '2022-05-03 20:57:06', 'VISA', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(73, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 10, prix : 15€.  ', 150, '2022-05-03 22:52:09', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(74, 40, ' •Bob \'Gamberge baba\' dans la taille s, qté : 1, prix : 15€.  ', 15, '2022-05-03 23:36:26', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(75, 40, ' •Bob \'Maître du game\' dans la taille l, qté : 1, prix : 15€.  ', 15, '2022-05-03 23:39:33', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(76, 40, ' •T-shirt \'Max ou crève\' dans la taille xxxl, qté : 2, prix : 20€.   •T-shirt \'Masterclass\' dans la taille xs, qté : 1, prix : 42€.  ', 82, '2022-05-03 23:40:58', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payéee'),
+(77, 40, ' •T-shirt \'Welcome to the gouffre\' dans la taille l, qté : 2, prix : 20€.  ', 40, '2022-05-04 16:04:39', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée'),
+(78, 40, ' •T-shirt \'Max ou crève\' dans la taille xs, qté : 1, prix : 20€.   •T-shirt \'Sandstorm\' dans la taille m, qté : 4, prix : 21€.   •T-shirt \'Bit nerd\' dans la taille m, qté : 1, prix : 23€.   •T-shirt \'Bit nerd\' dans la taille l, qté : 1, prix : 23€.  ', 150, '2022-05-06 01:20:48', 'Paypal', 'Boussiouf Mourad ; 60,Boulevard Heri Barnier ,13015,Marseille', 'payée');
 
 -- --------------------------------------------------------
 
@@ -142,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`),
   KEY `foreignKeyCategorie` (`id_categorie`),
   KEY `foreignKeySousCategorie` (`id_souscategorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `products`
@@ -157,7 +151,10 @@ INSERT INTO `products` (`id`, `name`, `price`, `date`, `image`, `image2`, `descr
 (71, 'T-shirt \'ACID transaction\'', 20, '2022-04-25 06:14:03', 'tshirt7.jpg', 'tshirt7back.jpg', 'Acid', 1, 1),
 (72, 'T-shirt \'C\'est quoi ISSET ?\'', 20, '2022-04-25 06:18:53', 'tshirt3.jpg', 'tshirt3back.jpg', 'Ça renvoi TROU OR FOLSE.', 1, 2),
 (73, 'T-shirt \'Welcome to the gouffre\'', 20, '2022-04-25 06:51:23', 'tshirt1.jpg', 'tshirt1back.jpg', 'Idéal pour vos voyages interdimensionnels.', 1, 2),
-(74, 'T-shirt \'Masterclass\'', 42, '2022-05-02 00:45:02', 'tshirt4.jpg', 'tshirt4back.jpg', 'J\'espère que personne ne se sent exclu.', 1, 2);
+(74, 'T-shirt \'Masterclass\'', 42, '2022-05-02 00:45:02', 'tshirt4.jpg', 'tshirt4back.jpg', 'J\'espère que personne ne se sent exclu.', 1, 2),
+(75, 'T-shirt \'Arraille\'', 22, '2022-05-05 22:44:07', 'tshirt8.jpg', 'tshirt8back.jpg', 'typeof(arrailleIsArraille(arraille)) === object ?', 1, 2),
+(76, 'T-shirt \'Bit nerd\'', 23, '2022-05-05 23:08:25', 'tshirt10.jpg', 'tshirt10back.jpg', 'Les wannabe pensent coder mais VOUS êtes le vrai bit nerd dans la matrice.', 1, 1),
+(77, 'T-shirt \'Sandstorm\'', 21, '2022-05-05 23:13:34', 'tshirt9.jpg', 'tshirt9back.jpg', 'Selon la légende, dès que sandstorm est lancé, les ghoules putrides du gouffre refont surface.', 1, 1);
 
 -- --------------------------------------------------------
 

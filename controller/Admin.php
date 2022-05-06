@@ -44,7 +44,7 @@ class Admin extends Controller
             $idproduct = $_POST['idproduct'];
             $delete = new ArticlesModel();
             $delete->deleteArticle($idproduct);
-            echo "<div class = error> Les données liées à cet ID ont étaient effacées. </div>";
+            echo "<div class = error> Les données liées à cet ID ont été effacées. </div>";
             header('Refresh:2;url='.path.'adminarticles');
         }
         if(isset($_POST['createcat'])){
@@ -88,7 +88,7 @@ class Admin extends Controller
             $updatePrenom = $_POST['firstnameuser'];
             $selectTheUser = new UserModel();
             $updateTheUser = $selectTheUser->updateAll($updateEmail, $updatePhone, $updateAdress, $updateRank, $updateNom, $updatePrenom, $updateId);
-            echo "<div class = reussi> Cet utilisateur à été modifié.</div>";
+            echo "<div class = reussi> Cet utilisateur a été modifié.</div>";
             header('Refresh:1.5;url='.path.'adminuser');
             }
 

@@ -60,7 +60,7 @@
     <label for="pricedisplay">Montant total :</label>
     <input type="text" id="pricedisplay" name="pricedisplay" value="<?= $selectedOrder[0]['totalprice'] ;?>€"   disabled="disabled">
     <br>
-    <label for="datedisplay">Date creation commande</label>
+    <label for="datedisplay">Date création commande</label>
     <input type="text" id="datedisplay" name="datedisplay" value=<?= $selectedOrder[0]['date']; ?> disabled="disabled">
     <label for="deliverydisplay">Adresse de livraison</label>
     <input type="text" id="deliverydisplay" name="deliverydisplay" value="<?= $selectedOrder[0]['delivery_adress'] ?>"   required>

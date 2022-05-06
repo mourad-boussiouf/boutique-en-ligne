@@ -22,7 +22,7 @@ class Mesinfos extends Controller
             $_SESSION['prenom'] =  $_POST['firstnameuser'];
 
 
-            echo "<div class = reussi> Vos informations ont étaient modifiées.</div>";
+            echo "<div class = reussi> Vos informations ont été modifiées.</div>";
             header('Refresh:2;url='.path.'mesinfos');
         }
     self::render('mesinfos');
