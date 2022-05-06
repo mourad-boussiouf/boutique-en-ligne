@@ -67,29 +67,27 @@ $pageask = explode('/', $_GET['p']);
 </footer>
       <footer>
           <div class="para">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Sit quod distinctio doloribus numquam. 
-                      Nulla esse eum enim rem voluptatibus vel quidem, incidunt, sit minus expedita quae voluptatum magnam. 
+                  <p>Mentions légales
                   </p>
           </div>
           <div class="shop">
               <h3>SHOP</h3>
               <ul>
-                  <li><a href="nouveautés.php">Nouveautés</a></li>
-                  <li><a href="#">Vêtements</a></li>
+                  <li><a href="<?= path ?>">Accueil</a></li>
+                  <li><a href="<?= path ?>articles">Vêtements</a></li>
               </ul>
           </div>
           <div class="company">
               <h3>COMPANY</h3>
               <ul>
-                  <li><a href="connexion.php">Connexion</a></li>
-                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="<?= path ?>authentification">Connexion</a></li>
+                  <li><a href="<?= path ?>authentification">Inscription</a></li>
               </ul>
           </div>
           <div class="newsletter">
               <h3>NEWSLETTER</h3>
               <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate, magni provident impedit nobis cumque, sint vel asperiores delectus libero dolor excepturi sunt aperiam recusandae tenetur voluptatibus eligendi illum corrupti.
+                 <i>Le gouffre est une entreprise en faillite.</i>
               </p>
           </div>
       </footer>
