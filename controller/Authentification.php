@@ -2,7 +2,6 @@
 
 
 
-
 class Authentification extends Controller
 {
 
@@ -11,10 +10,10 @@ class Authentification extends Controller
 
         if (isset($_POST['connect'])) {
 
-            $usermodel = new Usermodel();
-            $user = $usermodel->getOne('email', htmlspecialchars($_POST['email']));
+            $usermodel = new UserModel();
+            $user = $usermodel->getOne('email', $_POST['emaillog']);
             if (!empty($user)) {
-                if ($user[0]['password'] == password_verify($_POST['password'], $user[0]['password'])) {
+                if ($user[0]['password'] == password_verify($_POST['passwordlog'], $user[0]['password'])) {
                     $_SESSION['panier']=array();
                     $_SESSION['panier']['libelleProduit'] = array();
                     $_SESSION['panier']['qteProduit'] = array();
@@ -28,16 +27,17 @@ class Authentification extends Controller
                     $_SESSION['droit'] =$user[0]['id_droit'];
                     $_SESSION['prenom'] = $user[0]['prenom'];
                     $_SESSION['nom'] = $user[0]['nom'];
-                    self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user[0]['prenom']."</div>";
+                    self::render("authentification");
+                   
                 } 
             } 
 
-            $usermodel2 = new UserModel();
-            $user2 = $usermodel2->getOne('telephone', htmlspecialchars($_POST['telephone']));
+            
+            $user2 = $usermodel->getOne('telephone', $_POST['telephonelog']);
             if (!empty($user2)) {
 
-                if ($user2[0]['password'] == password_verify($_POST['password'], $user2[0]['password'])) {
+                if ($user2[0]['password'] == password_verify($_POST['passwordlog'], $user2[0]['password'])) {
                     $_SESSION['panier']=array();
                     $_SESSION['panier']['libelleProduit'] = array();
                     $_SESSION['panier']['qteProduit'] = array();
@@ -53,9 +53,9 @@ class Authentification extends Controller
                     $_SESSION['nom'] = $user2[0]['nom'];
 
                     
-                    
-                    self::render("authentification");
                     echo "<div class = reussi> Vous êtes connnecté en tant que : </div>"."<div class = reussi>".$user2[0]['prenom']."</div>";
+                    self::render("authentification");
+                   
                 } 
 
             }

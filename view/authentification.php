@@ -4,7 +4,7 @@
     <div class="error"></div>
 
         <div class = container>
-        <form class="box" action="#" method="post">
+        <form class="box" action="" method="POST">
             <h1 class="titre">Inscription</h1>
             <label for="email">Email</label>
             <input type="text" name="email" placeholder="Votre email">
@@ -33,15 +33,15 @@
 
     <br> <br>
 
-    <form class="box-conn" action="#" method="post">
+    <form class="box-conn" action="" method="POST">
     <h1 class="titre">Connexion</h1>
     <label for="email">Email</label>
-    <input type="text" name="email">
+    <input type="text" name="emaillog">
     <label for="telephone">Téléphone</label>
-    <input type="text" name="telephone">
+    <input type="text" name="telephonelog">
     <label for="password">Votre Mot de passe</label>
-    <input type="password" name="password">
-    <input id="connect" type="submit" value="se connecter" name="connect">
+    <input type="password" name="passwordlog">
+    <input id="connect" type="submit" value="se connecter" name="connect" id = "connect">
     <a href="<?= path ?>inscription">Pas encore inscrit? C'est par ici!</a>
     </form>
     </div>
