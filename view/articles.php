@@ -143,7 +143,7 @@
                         <option value = xl>XL</option>
                         <option value = xxl>XXL</option>
                         <option value = xxxl>XXXL</option>
-                        <option value = grossophobie>Le mcdo des caillols</option>
+                        <option value = grossophobie>4XL</option>
                         <?php endif; ?>
                 </select></span>
         <input id = "indiadd" type="submit" name="addcart" value ="Ajouter au panier">

@@ -26,7 +26,6 @@ class Paiement extends Controller
             $orderModel = new OrdersModel();
             $orderInsert=$orderModel->insertOrders($id_user, $orderline, $totalprice, $moyen_paiement, $delivery_adress);
 
-            
             unset($_SESSION['orderline']);
             $_SESSION['panier']=array();
             $_SESSION['panier']['libelleProduit'] = array();

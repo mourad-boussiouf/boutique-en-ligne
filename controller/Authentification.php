@@ -60,9 +60,9 @@ class Authentification extends Controller
 
             }
 
-            if (empty($user) && empty($user2)) {
+            if (empty($user) || empty($user2)) {
                 self::render("authentification");
-                echo "<div class = error> Cet utilisateur n'existe pas</div>";
+                echo "<div class = error> Les données saisies sont incorrectes.</div>";
             } 
            
                 

@@ -42,6 +42,5 @@
     <label for="password">Votre Mot de passe</label>
     <input type="password" name="passwordlog">
     <input id="connect" type="submit" value="se connecter" name="connect" id = "connect">
-    <a href="<?= path ?>inscription">Pas encore inscrit? C'est par ici!</a>
     </form>
     </div>
