@@ -30,7 +30,7 @@ class Model
         return $this->_connexion;
     }
 
-        //FONCTIONS GENERIQUES .
+        //FONCTIONS GENERALES
         
     public function getALL()
     {

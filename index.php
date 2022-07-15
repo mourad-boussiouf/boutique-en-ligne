@@ -17,7 +17,6 @@ spl_autoload_register(function ($class) {
 );
 
 //path = racine du dossier
-//str replace (search, replace, subject)
 //root = le nom du fichier demandé devient la variable pageask
 define('path', '/boutique-en-ligne/');
 
