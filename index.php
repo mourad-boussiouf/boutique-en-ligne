@@ -13,15 +13,12 @@ spl_autoload_register(function ($class) {
         require_once('model/' . $class . '.php');
     }
     
-}
-);
+});
 
 //path = racine du dossier
 //root = le nom du fichier demandé devient la variable pageask
 define('path', '/boutique-en-ligne/');
-
 define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
-
 $pageask = explode('/', $_GET['p']);
 
 

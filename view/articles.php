@@ -118,8 +118,6 @@
 <?php endif; ?>
 
 
-
-        <!-- Page d'article individuelle -->
 <?php if (isset($pageask[1]) && is_numeric($pageask[1])): ?>
 <div class = productindi>
 <?php

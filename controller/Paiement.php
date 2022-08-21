@@ -5,7 +5,8 @@ class Paiement extends Controller
     {
 
         if(count($_SESSION['panier']['libelleProduit']) <= 0) {
-            echo "<div class = error> Vous devez avoir choisi des articles pour commander.</div>";
+            echo "<div class = error> Vous devez avoir 
+            choisi des articles pour commander.</div>";
             header('Refresh:0;url='.path.'articles');
             }
 

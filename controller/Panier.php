@@ -1,7 +1,6 @@
 <?php
 class Panier extends Controller 
 {
-
     public static function index(){
 
         if(count($_SESSION['panier']['libelleProduit']) <= 0) {
@@ -17,7 +16,7 @@ class Panier extends Controller
 
         if (isset($_POST['delArticleCart']))
         {   
-        $enlevestp = $model->supprimerArticle($libelleProduit);
+        $enlevestp = $model->supprimerElementPanier($libelleProduit);
         $prixTotal = $model->MontantGlobal();
 
         self::render('panier', compact('prixTotal'));
@@ -25,8 +24,8 @@ class Panier extends Controller
         }
        
         if (isset($_POST['AddSubmit'])){
-        $maxoucreve = $_POST['add'];
-        $decremquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);  
+        $nb = $_POST['add'];
+        $decremquant = $model->modifierQTeArticle($libelleProduit,$nb);  
         $prixTotal = $model->MontantGlobal();
 
         self::render('panier', compact('prixTotal'));
@@ -34,8 +33,8 @@ class Panier extends Controller
         }
         
         if (isset($_POST['RemSubmit'])){
-        $maxoucreve = $_POST['decrease'];
-        $moinsquant = $model->modifierQTeArticle($libelleProduit,$maxoucreve);
+        $nb = $_POST['decrease'];
+        $moinsquant = $model->modifierQTeArticle($libelleProduit,$nb);
         $prixTotal = $model->MontantGlobal();
 
         self::render('panier', compact('prixTotal'));

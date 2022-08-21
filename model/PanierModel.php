@@ -8,17 +8,18 @@ class PanierModel extends Model
     }
 
  
-    public function supprimerArticle($libelleProduit){
-        //Si le panier existe
+    public function supprimerElementPanier($libelleProduit){
+
         if (isset($_SESSION['panier']))
         {
-           //Nous allons passer par un panier temporaire
+
            $tmp=array();
            $tmp['libelleProduit'] = array();
            $tmp['qteProduit'] = array();
            $tmp['prixProduit'] = array();
            for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
            {
+
               if ($_SESSION['panier']['libelleProduit'][$i] !== $libelleProduit)
               {
                  array_push( $tmp['libelleProduit'],$_SESSION['panier']['libelleProduit'][$i]);
@@ -27,9 +28,9 @@ class PanierModel extends Model
               }
      
            }
-           //On remplace le panier en session par notre panier temporaire à jour
+
            $_SESSION['panier'] =  $tmp;
-           //On efface notre panier temporaire
+
            unset($tmp);
         }
         else
@@ -64,7 +65,7 @@ class PanierModel extends Model
                 }
 
             if($_SESSION['panier']['qteProduit'][$positionProduit] <= 0){
-                $this->supprimerArticle($libelleProduit); //supprimme le produit si jamais la quantité vaut 0
+                $this->supprimerElementPanier($libelleProduit); //supprimme le produit si jamais la quantité vaut 0
             }
         
         }

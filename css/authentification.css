@@ -90,7 +90,7 @@ form a {
 @media (max-width: 425px) { 
     html {
         overflow-x: hidden;
-        overflow-y: hidden;
+        
     }
 
     .container {

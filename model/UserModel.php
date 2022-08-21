@@ -10,7 +10,7 @@ class UserModel extends Model
 
     public function insert($value1, $value2, $value3, $value4, $value5, $value6)
     {
-        $sth = $this->_connexion->prepare('INSERT INTO `user`(email, password, 	telephone, adresse, id_droit, nom, prenom) VALUES (?,?,?,?,1,?,?)');
+        $sth = $this->_connexion->prepare("INSERT INTO $this->table(email, password, 	telephone, adresse, id_droit, nom, prenom) VALUES (?,?,?,?,1,?,?)");
         $sth->execute(array($value1, $value2, $value3, $value4, $value5, $value6));
     }
 

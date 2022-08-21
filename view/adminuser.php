@@ -28,9 +28,7 @@
 <?php endif; ?>
 
 <?php if (isset($pageask[1])): ?>
-
     <h2>Modification utilisateur : Changez la valeur du/des champs que vous voulez mettre à jour puis cliquez sur modifier</h2>
-
 <form action="" method="POST">
     <label for="name">Id utilisateur</label>
     <input type="text" id="iduser" name="iduser" placeholder=<?= $selectedUser[0]['id']; ?>  disabled="disabled">
@@ -50,7 +48,6 @@
     <input type="text" id="firstnameuser" name="firstnameuser" value=<?= $selectedUser[0]['prenom']; ?> required>
     <input type="submit" name="modifyuser" value ="Modifier">
 </form>
-
 <a href="<?=path?>adminuser">Annuler la modification</a>
 
 <?php endif; ?>

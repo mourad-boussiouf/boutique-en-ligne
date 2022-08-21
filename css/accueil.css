@@ -155,4 +155,14 @@ font-size: 36px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
 }
+
+@media (max-width: 425px) { 
+  html {
+      overflow-x: hidden;
+      
+  }
+}
+
+
+
     
